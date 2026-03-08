@@ -1,3 +1,13 @@
+// FILE: src/types.ts
+
+export interface Airport {
+  code: string
+  name: string
+  lat: number
+  lon: number
+  cityId?: string
+}
+
 export interface City {
   id: string
   name: string
@@ -6,13 +16,8 @@ export interface City {
   lat: number
   lon: number
   timezone: string
-  square_area: number   // km²
-  airport: {
-    code: string        // IATA
-    name: string
-    lat: number
-    lon: number
-  }
+  square_area: number
+  airport?: Airport
   photos: string[]
   notes?: string
   createdAt: number
@@ -29,8 +34,4 @@ export interface CompareResult {
   distanceMiles: number
   greatCircleKm: number
   greatCircleMiles: number
-  // airportA?: AirportInfo
-  // airportB?: AirportInfo
-  // weatherA?: WeatherInfo
-  // weatherB?: WeatherInfo
 }

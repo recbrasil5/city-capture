@@ -3,7 +3,8 @@
 </template>
 
 <script setup>
-import MapView from './components/MapView.vue'
+import MapView from './views/MapView.vue'
+console.log(import.meta.env.VITE_GOOGLE_API_KEY)
 </script>
 
 <style>
