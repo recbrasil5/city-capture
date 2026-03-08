@@ -22,6 +22,7 @@ export const useCityStore = defineStore('city', {
         photos: [],
         createdAt: Date.now()
       },
+
       {
         id: 'recife',
         name: 'Recife',
@@ -61,21 +62,61 @@ export const useCityStore = defineStore('city', {
         createdAt: Date.now()
       },
 
-      // Sydney (SYD)
+      // Chicago (ORD)
       {
-        id: 'sydney',
-        name: 'Sydney',
-        country: 'Australia',
-        state: 'New South Wales',
-        lat: -33.8688,
-        lon: 151.2093,
-        timezone: 'Australia/Sydney',
-        square_area: 1687.0,
+        id: 'chicago',
+        name: 'Chicago',
+        country: 'United States',
+        state: 'Illinois',
+        lat: 41.8781,
+        lon: -87.6298,
+        timezone: 'America/Chicago',
+        square_area: 606.1,
         airport: {
-          code: 'SYD',
-          name: 'Sydney Kingsford Smith Airport',
-          lat: -33.9399,
-          lon: 151.1753
+          code: 'ORD',
+          name: "O'Hare International Airport",
+          lat: 41.9742,
+          lon: -87.9073
+        },
+        photos: [],
+        createdAt: Date.now()
+      },
+
+      // La Crosse (LSE)
+      {
+        id: 'la_crosse',
+        name: 'La Crosse',
+        country: 'United States',
+        state: 'Wisconsin',
+        lat: 43.8014,
+        lon: -91.2396,
+        timezone: 'America/Chicago',
+        square_area: 23.79,
+        airport: {
+          code: 'LSE',
+          name: 'La Crosse Regional Airport',
+          lat: 43.8790,
+          lon: -91.2567
+        },
+        photos: [],
+        createdAt: Date.now()
+      },
+
+      // Paris (CDG)
+      {
+        id: 'paris',
+        name: 'Paris',
+        country: 'France',
+        state: null,
+        lat: 48.8566,
+        lon: 2.3522,
+        timezone: 'Europe/Paris',
+        square_area: 40.7,
+        airport: {
+          code: 'CDG',
+          name: 'Charles de Gaulle Airport',
+          lat: 49.0097,
+          lon: 2.5479
         },
         photos: [],
         createdAt: Date.now()

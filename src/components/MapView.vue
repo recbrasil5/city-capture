@@ -2,19 +2,15 @@
   <div id="map"></div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted } from 'vue'
 import L from 'leaflet'
-import * as turf from '@turf/turf'
 
-// Simple airport dataset (restore your real one later)
-const airports = [
-  { code: 'JFK', name: 'New York JFK', lat: 40.6413, lng: -73.7781 },
-  { code: 'LAX', name: 'Los Angeles', lat: 33.9416, lng: -118.4085 },
-  { code: 'SYD', name: 'Sydney', lat: -33.8688, lng: 151.2093 },
-]
+import { getAirport } from '@/utils/cityUtils'
+import { computeDistanceMiles, computeFlightHours, buildGreatCircleCoords } from '@/utils/geoUtils'
+import { createRoutePolyline, highlightSelectedRoute } from '@/utils/mapUtils'
+import { useSelectableCities } from '@/composables/useSelectableCities'
 
-// Pointer icon (same as before)
 const pointerIcon = L.icon({
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
   iconSize: [25, 41],
@@ -22,48 +18,63 @@ const pointerIcon = L.icon({
 })
 
 onMounted(() => {
-  console.log('MapView mounted')
+  const REC = getAirport('REC')
+  const LSE = getAirport('LSE')
+  const CDG = getAirport('CDG')
 
-  const map = L.map('map').setView([20, 0], 2)
+  if (!REC || !LSE || !CDG) {
+    console.error('Missing airport(s):', { REC, LSE, CDG })
+    return
+  }
+
+  const map = L.map('map').setView([10, -20], 3)
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
   }).addTo(map)
 
-  // --- 1. Add airport markers back ---
-  airports.forEach(a => {
-    L.marker([a.lat, a.lng], { icon: pointerIcon })
-      .addTo(map)
-      .bindPopup(`${a.code} — ${a.name}`)
+  // Load all selectable cities (any city with an airport)
+  const { markers, selectedCity, loadCitiesWithAirports } =
+    useSelectableCities(map, pointerIcon)
+
+  loadCitiesWithAirports()
+
+  // Hard-coded demo routes for now
+  const routes = [
+    { from: REC, to: LSE, color: 'red' },
+    { from: REC, to: CDG, color: 'blue' }
+  ]
+
+  const polylines: L.Polyline[] = []
+
+  routes.forEach(route => {
+    const { from, to, color } = route
+
+    const coords = buildGreatCircleCoords(from, to)
+    const polyline = createRoutePolyline(coords, color, map)
+    polylines.push(polyline)
+
+    const miles = computeDistanceMiles(from, to)
+    const hours = computeFlightHours(miles)
+
+    polyline.bindPopup(`
+      <div class="route-popup">
+        <strong>${Math.round(miles)} miles</strong><br>
+        ${hours.toFixed(1)} hours (avg)
+      </div>
+    `)
+
+    polyline.on('click', () => {
+      highlightSelectedRoute(polyline, polylines)
+
+      // Open both endpoint popups
+      markers[from.code]?.openPopup()
+      markers[to.code]?.openPopup()
+
+      // Open route popup last so it wins focus
+      setTimeout(() => polyline.openPopup(), 50)
+    })
   })
-
-  // --- 2. Draw straight lines between airports (restore old behavior) ---
-  for (let i = 0; i < airports.length; i++) {
-    for (let j = i + 1; j < airports.length; j++) {
-      const a = airports[i]
-      const b = airports[j]
-
-      L.polyline(
-        [
-          [a.lat, a.lng],
-          [b.lat, b.lng],
-        ],
-        { color: '#555', weight: 1, opacity: 0.6 }
-      ).addTo(map)
-    }
-  }
-
-  // --- 3. Keep your JFK → SYD great‑circle arc ---
-  const jfk = turf.point([-73.7781, 40.6413])
-  const syd = turf.point([151.2093, -33.8688])
-
-  const gc = turf.greatCircle(jfk, syd, { npoints: 256 })
-  const coords = gc.geometry.coordinates.map(([lng, lat]) => [lat, lng])
-
-  L.polyline(coords, {
-    color: 'red',
-    weight: 3,
-  }).addTo(map)
 })
 </script>
 
@@ -71,5 +82,10 @@ onMounted(() => {
 #map {
   height: 100vh;
   width: 100vw;
+}
+
+.route-popup {
+  font-size: 14px;
+  padding: 4px 2px;
 }
 </style>
