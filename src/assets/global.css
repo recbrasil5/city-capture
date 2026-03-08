@@ -1,0 +1,17 @@
+/* Root reset so the map and UI can fill the viewport */
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Leaflet’s internal container must be styled globally */
+.leaflet-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Optional: a neutral background so you can see layout before map loads */
+body {
+  background: #111;
+}
