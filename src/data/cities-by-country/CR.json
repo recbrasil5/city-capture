@@ -1,0 +1,8 @@
+[
+  { "name": "San José", "lat": 9.9281, "lng": -84.0907, "country": "CR", "population": 342188 },
+  { "name": "Limón", "lat": 9.9907, "lng": -83.0350, "country": "CR", "population": 63081 },
+  { "name": "Alajuela", "lat": 10.0163, "lng": -84.2116, "country": "CR", "population": 297879 },
+  { "name": "Heredia", "lat": 9.9981, "lng": -84.1165, "country": "CR", "population": 123616 },
+  { "name": "Puntarenas", "lat": 9.9763, "lng": -84.8384, "country": "CR", "population": 115019 },
+  { "name": "Cartago", "lat": 9.8644, "lng": -83.9194, "country": "CR", "population": 156600 }
+]

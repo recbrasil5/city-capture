@@ -1,0 +1,6 @@
+[
+  { "name": "Auckland", "lat": -36.8509, "lng": 174.7645, "country": "NZ", "population": 1657000 },
+  { "name": "Wellington", "lat": -41.2865, "lng": 174.7762, "country": "NZ", "population": 215100 },
+  { "name": "Christchurch", "lat": -43.5321, "lng": 172.6362, "country": "NZ", "population": 396700 },
+  { "name": "Hamilton", "lat": -37.7870, "lng": 175.2793, "country": "NZ", "population": 178500 }
+]

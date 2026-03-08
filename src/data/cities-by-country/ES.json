@@ -1,0 +1,22 @@
+[
+  { "name": "Madrid", "lat": 40.4168, "lng": -3.7038, "country": "ES", "population": 3223334 },
+  { "name": "Barcelona", "lat": 41.3851, "lng": 2.1734, "country": "ES", "population": 1620343 },
+  { "name": "Valencia", "lat": 39.4699, "lng": -0.3763, "country": "ES", "population": 791413 },
+  { "name": "Seville", "lat": 37.3891, "lng": -5.9845, "country": "ES", "population": 684234 },
+  { "name": "Zaragoza", "lat": 41.6488, "lng": -0.8891, "country": "ES", "population": 675302 },
+  { "name": "Málaga", "lat": 36.7213, "lng": -4.4214, "country": "ES", "population": 578460 },
+  { "name": "Murcia", "lat": 37.9922, "lng": -1.1307, "country": "ES", "population": 460349 },
+  { "name": "Palma", "lat": 39.5696, "lng": 2.6502, "country": "ES", "population": 416065 },
+  { "name": "Las Palmas", "lat": 28.1235, "lng": -15.4363, "country": "ES", "population": 381223 },
+  { "name": "Bilbao", "lat": 43.2630, "lng": -2.9350, "country": "ES", "population": 346405 },
+  { "name": "Alicante", "lat": 38.3452, "lng": -0.4810, "country": "ES", "population": 337482 },
+  { "name": "Córdoba", "lat": 37.8882, "lng": -4.7794, "country": "ES", "population": 326609 },
+  { "name": "Valladolid", "lat": 41.6523, "lng": -4.7245, "country": "ES", "population": 298412 },
+  { "name": "Vigo", "lat": 42.2406, "lng": -8.7207, "country": "ES", "population": 295364 },
+  { "name": "Gijón", "lat": 43.5322, "lng": -5.6611, "country": "ES", "population": 271780 },
+  { "name": "L'Hospitalet de Llobregat", "lat": 41.3597, "lng": 2.0997, "country": "ES", "population": 264923 },
+  { "name": "A Coruña", "lat": 43.3623, "lng": -8.4115, "country": "ES", "population": 245711 },
+  { "name": "Vitoria-Gasteiz", "lat": 42.8467, "lng": -2.6727, "country": "ES", "population": 253996 },
+  { "name": "Granada", "lat": 37.1773, "lng": -3.5986, "country": "ES", "population": 233648 },
+  { "name": "Elche", "lat": 38.2699, "lng": -0.7126, "country": "ES", "population": 234765 }
+]

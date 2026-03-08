@@ -1,0 +1,12 @@
+[
+  { "name": "Bucharest", "lat": 44.4268, "lng": 26.1025, "country": "RO", "population": 1883425 },
+  { "name": "Cluj-Napoca", "lat": 46.7712, "lng": 23.6236, "country": "RO", "population": 324576 },
+  { "name": "Timișoara", "lat": 45.7489, "lng": 21.2087, "country": "RO", "population": 319279 },
+  { "name": "Iași", "lat": 47.1585, "lng": 27.6014, "country": "RO", "population": 290422 },
+  { "name": "Constanța", "lat": 44.1598, "lng": 28.6348, "country": "RO", "population": 283872 },
+  { "name": "Craiova", "lat": 44.3302, "lng": 23.7949, "country": "RO", "population": 269506 },
+  { "name": "Brașov", "lat": 45.6579, "lng": 25.6012, "country": "RO", "population": 253200 },
+  { "name": "Galați", "lat": 45.4353, "lng": 28.0070, "country": "RO", "population": 249432 },
+  { "name": "Ploiești", "lat": 44.9429, "lng": 26.0122, "country": "RO", "population": 209945 },
+  { "name": "Oradea", "lat": 47.0722, "lng": 21.9211, "country": "RO", "population": 196367 }
+]

@@ -1,0 +1,6 @@
+[
+  { "name": "Niamey", "lat": 13.5167, "lng": 2.1167, "country": "NE", "population": 1300000 },
+  { "name": "Zinder", "lat": 13.8000, "lng": 8.9833, "country": "NE", "population": 235605 },
+  { "name": "Maradi", "lat": 13.5000, "lng": 7.1000, "country": "NE", "population": 267249 },
+  { "name": "Agadez", "lat": 16.9667, "lng": 7.9833, "country": "NE", "population": 110497 }
+]

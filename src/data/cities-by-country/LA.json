@@ -1,0 +1,5 @@
+[
+  { "name": "Vientiane", "lat": 17.9757, "lng": 102.6331, "country": "LA", "population": 948477 },
+  { "name": "Savannakhet", "lat": 16.5700, "lng": 104.7600, "country": "LA", "population": 125760 },
+  { "name": "Pakse", "lat": 15.1177, "lng": 105.8183, "country": "LA", "population": 119848 }
+]

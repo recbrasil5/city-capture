@@ -1,0 +1,6 @@
+[
+  { "name": "Bamako", "lat": 12.6392, "lng": -8.0029, "country": "ML", "population": 2800000 },
+  { "name": "Sikasso", "lat": 11.3167, "lng": -5.6667, "country": "ML", "population": 225753 },
+  { "name": "Mopti", "lat": 14.4833, "lng": -4.1833, "country": "ML", "population": 114296 },
+  { "name": "Kayes", "lat": 14.4469, "lng": -11.4445, "country": "ML", "population": 127368 }
+]

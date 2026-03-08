@@ -1,0 +1,5 @@
+[
+  { "name": "Lomé", "lat": 6.1319, "lng": 1.2228, "country": "TG", "population": 837437 },
+  { "name": "Sokodé", "lat": 8.9833, "lng": 1.1333, "country": "TG", "population": 117811 },
+  { "name": "Kara", "lat": 9.5511, "lng": 1.1861, "country": "TG", "population": 110000 }
+]

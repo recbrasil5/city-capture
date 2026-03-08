@@ -1,0 +1,5 @@
+[
+  { "name": "Santo Domingo", "lat": 18.4861, "lng": -69.9312, "country": "DO", "population": 965040 },
+  { "name": "Santiago de los Caballeros", "lat": 19.4500, "lng": -70.7000, "country": "DO", "population": 591985 },
+  { "name": "La Romana", "lat": 18.4273, "lng": -68.9728, "country": "DO", "population": 130426 }
+]

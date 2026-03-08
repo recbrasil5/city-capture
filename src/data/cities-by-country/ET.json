@@ -1,0 +1,6 @@
+[
+  { "name": "Addis Ababa", "lat": 9.0300, "lng": 38.7400, "country": "ET", "population": 3041002 },
+  { "name": "Dire Dawa", "lat": 9.6000, "lng": 41.8667, "country": "ET", "population": 440000 },
+  { "name": "Mekelle", "lat": 13.4967, "lng": 39.4767, "country": "ET", "population": 545000 },
+  { "name": "Gondar", "lat": 12.6000, "lng": 37.4667, "country": "ET", "population": 358000 }
+]

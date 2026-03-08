@@ -1,0 +1,5 @@
+[
+  { "name": "Kigali", "lat": -1.9499, "lng": 30.0588, "country": "RW", "population": 1326000 },
+  { "name": "Butare", "lat": -2.5967, "lng": 29.7394, "country": "RW", "population": 89900 },
+  { "name": "Gisenyi", "lat": -1.7028, "lng": 29.2564, "country": "RW", "population": 106000 }
+]

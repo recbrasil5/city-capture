@@ -1,0 +1,7 @@
+[
+  { "name": "Mogadishu", "lat": 2.0469, "lng": 45.3182, "country": "SO", "population": 2490000 },
+  { "name": "Hargeisa", "lat": 9.5624, "lng": 44.0770, "country": "SO", "population": 1200000 },
+  { "name": "Bosaso", "lat": 11.2842, "lng": 49.1816, "country": "SO", "population": 700000 },
+  { "name": "Kismayo", "lat": -0.3556, "lng": 42.5183, "country": "SO", "population": 183300 },
+  { "name": "Baidoa", "lat": 3.1138, "lng": 43.6498, "country": "SO", "population": 130000 }
+]

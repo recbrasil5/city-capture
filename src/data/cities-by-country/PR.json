@@ -1,0 +1,6 @@
+[
+  { "name": "San Juan", "lat": 18.4655, "lng": -66.1057, "country": "PR", "population": 342259 },
+  { "name": "Bayamón", "lat": 18.3985, "lng": -66.1557, "country": "PR", "population": 170480 },
+  { "name": "Carolina", "lat": 18.3808, "lng": -65.9574, "country": "PR", "population": 176762 },
+  { "name": "Ponce", "lat": 18.0111, "lng": -66.6141, "country": "PR", "population": 137000 }
+]

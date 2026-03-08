@@ -1,0 +1,7 @@
+[
+  { "name": "Damascus", "lat": 33.5138, "lng": 36.2765, "country": "SY", "population": 1711000 },
+  { "name": "Aleppo", "lat": 36.2021, "lng": 37.1343, "country": "SY", "population": 1600000 },
+  { "name": "Homs", "lat": 34.7333, "lng": 36.7167, "country": "SY", "population": 775404 },
+  { "name": "Latakia", "lat": 35.5167, "lng": 35.7833, "country": "SY", "population": 424392 },
+  { "name": "Hama", "lat": 35.1333, "lng": 36.7500, "country": "SY", "population": 696863 }
+]

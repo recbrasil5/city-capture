@@ -1,0 +1,5 @@
+[
+  { "name": "Monrovia", "lat": 6.3005, "lng": -10.7969, "country": "LR", "population": 1050000 },
+  { "name": "Gbarnga", "lat": 6.9956, "lng": -9.4717, "country": "LR", "population": 56300 },
+  { "name": "Kakata", "lat": 6.5263, "lng": -10.3537, "country": "LR", "population": 33745 }
+]

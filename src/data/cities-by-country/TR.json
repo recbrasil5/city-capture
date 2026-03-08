@@ -1,0 +1,17 @@
+[
+  { "name": "Istanbul", "lat": 41.0082, "lng": 28.9784, "country": "TR", "population": 15462452 },
+  { "name": "Ankara", "lat": 39.9334, "lng": 32.8597, "country": "TR", "population": 5747325 },
+  { "name": "Izmir", "lat": 38.4237, "lng": 27.1428, "country": "TR", "population": 4320519 },
+  { "name": "Bursa", "lat": 40.1950, "lng": 29.0600, "country": "TR", "population": 2945600 },
+  { "name": "Antalya", "lat": 36.8969, "lng": 30.7133, "country": "TR", "population": 2426356 },
+  { "name": "Adana", "lat": 37.0000, "lng": 35.3213, "country": "TR", "population": 2263371 },
+  { "name": "Gaziantep", "lat": 37.0662, "lng": 37.3833, "country": "TR", "population": 2028563 },
+  { "name": "Konya", "lat": 37.8746, "lng": 32.4932, "country": "TR", "population": 2232374 },
+  { "name": "Mersin", "lat": 36.8000, "lng": 34.6333, "country": "TR", "population": 1841500 },
+  { "name": "Kayseri", "lat": 38.7225, "lng": 35.4875, "country": "TR", "population": 1412640 },
+  { "name": "Eskisehir", "lat": 39.7767, "lng": 30.5206, "country": "TR", "population": 898369 },
+  { "name": "Diyarbakir", "lat": 37.9100, "lng": 40.2300, "country": "TR", "population": 930266 },
+  { "name": "Samsun", "lat": 41.2867, "lng": 36.3300, "country": "TR", "population": 720000 },
+  { "name": "Denizli", "lat": 37.7765, "lng": 29.0864, "country": "TR", "population": 646278 },
+  { "name": "Sanliurfa", "lat": 37.1674, "lng": 38.7955, "country": "TR", "population": 814000 }
+]

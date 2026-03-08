@@ -1,0 +1,5 @@
+[
+  { "name": "Bratislava", "lat": 48.1486, "lng": 17.1077, "country": "SK", "population": 475503 },
+  { "name": "Košice", "lat": 48.7164, "lng": 21.2611, "country": "SK", "population": 238593 },
+  { "name": "Prešov", "lat": 49.0000, "lng": 21.2333, "country": "SK", "population": 83000 }
+]

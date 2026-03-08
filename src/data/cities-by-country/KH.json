@@ -1,0 +1,5 @@
+[
+  { "name": "Phnom Penh", "lat": 11.5564, "lng": 104.9282, "country": "KH", "population": 2282000 },
+  { "name": "Siem Reap", "lat": 13.3550, "lng": 103.8552, "country": "KH", "population": 245494 },
+  { "name": "Battambang", "lat": 13.0957, "lng": 103.2022, "country": "KH", "population": 196709 }
+]

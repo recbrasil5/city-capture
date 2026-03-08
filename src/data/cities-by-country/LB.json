@@ -1,0 +1,7 @@
+[
+  { "name": "Beirut", "lat": 33.8938, "lng": 35.5018, "country": "LB", "population": 361366 },
+  { "name": "Tripoli", "lat": 34.4381, "lng": 35.8308, "country": "LB", "population": 229398 },
+  { "name": "Sidon", "lat": 33.5600, "lng": 35.3750, "country": "LB", "population": 200000 },
+  { "name": "Tyre", "lat": 33.2700, "lng": 35.2033, "country": "LB", "population": 135204 },
+  { "name": "Byblos", "lat": 34.1230, "lng": 35.6519, "country": "LB", "population": 50000 }
+]

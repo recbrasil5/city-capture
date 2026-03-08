@@ -1,0 +1,9 @@
+[
+  { "name": "Jakarta", "lat": -6.2088, "lng": 106.8456, "country": "ID", "population": 10770487 },
+  { "name": "Surabaya", "lat": -7.2575, "lng": 112.7521, "country": "ID", "population": 2885556 },
+  { "name": "Bandung", "lat": -6.9175, "lng": 107.6191, "country": "ID", "population": 2394873 },
+  { "name": "Medan", "lat": 3.5952, "lng": 98.6722, "country": "ID", "population": 2299939 },
+  { "name": "Bekasi", "lat": -6.2383, "lng": 106.9756, "country": "ID", "population": 2875000 },
+  { "name": "Depok", "lat": -6.4025, "lng": 106.7942, "country": "ID", "population": 2087000 },
+  { "name": "Tangerang", "lat": -6.1783, "lng": 106.6319, "country": "ID", "population": 2230000 }
+]

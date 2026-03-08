@@ -1,0 +1,5 @@
+[
+  { "name": "Muscat", "lat": 23.5880, "lng": 58.3829, "country": "OM", "population": 1421409 },
+  { "name": "Seeb", "lat": 23.6703, "lng": 58.1891, "country": "OM", "population": 470878 },
+  { "name": "Salalah", "lat": 17.0194, "lng": 54.0897, "country": "OM", "population": 340815 }
+]

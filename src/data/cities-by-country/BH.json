@@ -1,0 +1,5 @@
+[
+  { "name": "Manama", "lat": 26.2285, "lng": 50.5860, "country": "BH", "population": 200000 },
+  { "name": "Riffa", "lat": 26.1223, "lng": 50.5550, "country": "BH", "population": 195606 },
+  { "name": "Muharraq", "lat": 26.2572, "lng": 50.6119, "country": "BH", "population": 100000 }
+]

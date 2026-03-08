@@ -1,0 +1,9 @@
+[
+  { "name": "Riyadh", "lat": 24.7136, "lng": 46.6753, "country": "SA", "population": 7600000 },
+  { "name": "Jeddah", "lat": 21.4858, "lng": 39.1925, "country": "SA", "population": 4300000 },
+  { "name": "Mecca", "lat": 21.3891, "lng": 39.8579, "country": "SA", "population": 2000000 },
+  { "name": "Medina", "lat": 24.5247, "lng": 39.5692, "country": "SA", "population": 1300000 },
+  { "name": "Dammam", "lat": 26.4207, "lng": 50.0888, "country": "SA", "population": 1200000 },
+  { "name": "Taif", "lat": 21.2703, "lng": 40.4158, "country": "SA", "population": 688693 },
+  { "name": "Tabuk", "lat": 28.3833, "lng": 36.5667, "country": "SA", "population": 667000 }
+]

@@ -1,0 +1,5 @@
+[
+  { "name": "Skopje", "lat": 41.9973, "lng": 21.4280, "country": "MK", "population": 544086 },
+  { "name": "Bitola", "lat": 41.0314, "lng": 21.3347, "country": "MK", "population": 74450 },
+  { "name": "Kumanovo", "lat": 42.1322, "lng": 21.7144, "country": "MK", "population": 105484 }
+]

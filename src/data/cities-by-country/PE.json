@@ -1,0 +1,16 @@
+[
+  { "name": "Lima", "lat": -12.0464, "lng": -77.0428, "country": "PE", "population": 9674755 },
+  { "name": "Arequipa", "lat": -16.4090, "lng": -71.5375, "country": "PE", "population": 1008290 },
+  { "name": "Trujillo", "lat": -8.1091, "lng": -79.0215, "country": "PE", "population": 919899 },
+  { "name": "Chiclayo", "lat": -6.7714, "lng": -79.8409, "country": "PE", "population": 552508 },
+  { "name": "Piura", "lat": -5.1945, "lng": -80.6328, "country": "PE", "population": 484475 },
+  { "name": "Iquitos", "lat": -3.7437, "lng": -73.2516, "country": "PE", "population": 437376 },
+  { "name": "Cusco", "lat": -13.5319, "lng": -71.9675, "country": "PE", "population": 428450 },
+  { "name": "Huancayo", "lat": -12.0651, "lng": -75.2049, "country": "PE", "population": 545615 },
+  { "name": "Tacna", "lat": -18.0066, "lng": -70.2463, "country": "PE", "population": 286240 },
+  { "name": "Juliaca", "lat": -15.5000, "lng": -70.1333, "country": "PE", "population": 276110 },
+  { "name": "Chimbote", "lat": -9.0745, "lng": -78.5936, "country": "PE", "population": 373096 },
+  { "name": "Puno", "lat": -15.8402, "lng": -70.0219, "country": "PE", "population": 141000 },
+  { "name": "Ica", "lat": -14.0678, "lng": -75.7286, "country": "PE", "population": 282407 },
+  { "name": "Sullana", "lat": -4.9039, "lng": -80.6853, "country": "PE", "population": 215000 }
+]

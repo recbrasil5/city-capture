@@ -1,0 +1,6 @@
+[
+  { "name": "Kuala Lumpur", "lat": 3.1390, "lng": 101.6869, "country": "MY", "population": 1800000 },
+  { "name": "George Town", "lat": 5.4141, "lng": 100.3288, "country": "MY", "population": 708127 },
+  { "name": "Johor Bahru", "lat": 1.4927, "lng": 103.7414, "country": "MY", "population": 497097 },
+  { "name": "Kota Kinabalu", "lat": 5.9804, "lng": 116.0735, "country": "MY", "population": 452058 }
+]

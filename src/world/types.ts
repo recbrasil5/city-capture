@@ -1,5 +1,8 @@
 // FILE: src/types.ts
 
+// -----------------------------
+// Airport (still needed for CompareResult popups, flights, etc.)
+// -----------------------------
 export interface Airport {
   code: string
   name: string
@@ -8,27 +11,29 @@ export interface Airport {
   cityId?: string
 }
 
+// -----------------------------
+// City (50K dataset version)
+// -----------------------------
 export interface City {
-  id: string
   name: string
-  country: string
-  state?: string
   lat: number
-  lon: number
-  timezone: string
-  square_area: number
-  airport?: Airport
-  photos: string[]
-  notes?: string
-  createdAt: number
+  lng: number
+  country: string
+  population: number
 }
 
+// -----------------------------
+// CityCaptureState
+// -----------------------------
 export interface CityCaptureState {
   cities: City[]
   selectedA: City | null
   selectedB: City | null
 }
 
+// -----------------------------
+// CompareResult
+// -----------------------------
 export interface CompareResult {
   distanceKm: number
   distanceMiles: number

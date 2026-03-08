@@ -1,0 +1,5 @@
+[
+  { "name": "Sofia", "lat": 42.6977, "lng": 23.3219, "country": "BG", "population": 1241675 },
+  { "name": "Plovdiv", "lat": 42.1354, "lng": 24.7453, "country": "BG", "population": 346893 },
+  { "name": "Varna", "lat": 43.2141, "lng": 27.9147, "country": "BG", "population": 335177 }
+]

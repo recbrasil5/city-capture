@@ -1,0 +1,5 @@
+[
+  { "name": "Conakry", "lat": 9.5092, "lng": -13.7122, "country": "GN", "population": 1667864 },
+  { "name": "Nzérékoré", "lat": 7.7562, "lng": -8.8179, "country": "GN", "population": 195027 },
+  { "name": "Kankan", "lat": 10.3850, "lng": -9.3057, "country": "GN", "population": 190722 }
+]

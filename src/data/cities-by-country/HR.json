@@ -1,0 +1,5 @@
+[
+  { "name": "Zagreb", "lat": 45.8150, "lng": 15.9819, "country": "HR", "population": 767131 },
+  { "name": "Split", "lat": 43.5081, "lng": 16.4402, "country": "HR", "population": 178102 },
+  { "name": "Rijeka", "lat": 45.3271, "lng": 14.4422, "country": "HR", "population": 128624 }
+]

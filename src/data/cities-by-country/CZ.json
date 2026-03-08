@@ -1,0 +1,6 @@
+[
+  { "name": "Prague", "lat": 50.0755, "lng": 14.4378, "country": "CZ", "population": 1309000 },
+  { "name": "Brno", "lat": 49.1951, "lng": 16.6068, "country": "CZ", "population": 379526 },
+  { "name": "Ostrava", "lat": 49.8209, "lng": 18.2625, "country": "CZ", "population": 284982 },
+  { "name": "Plzeň", "lat": 49.7384, "lng": 13.3736, "country": "CZ", "population": 175219 }
+]

@@ -1,0 +1,10 @@
+[
+  { "name": "Baghdad", "lat": 33.3152, "lng": 44.3661, "country": "IQ", "population": 7180889 },
+  { "name": "Basra", "lat": 30.5085, "lng": 47.7804, "country": "IQ", "population": 2600000 },
+  { "name": "Mosul", "lat": 36.3350, "lng": 43.1189, "country": "IQ", "population": 1739800 },
+  { "name": "Erbil", "lat": 36.1911, "lng": 44.0094, "country": "IQ", "population": 932800 },
+  { "name": "Kirkuk", "lat": 35.4667, "lng": 44.3167, "country": "IQ", "population": 850787 },
+  { "name": "Najaf", "lat": 32.0000, "lng": 44.3300, "country": "IQ", "population": 900000 },
+  { "name": "Karbala", "lat": 32.6167, "lng": 44.0333, "country": "IQ", "population": 700000 },
+  { "name": "Sulaymaniyah", "lat": 35.5610, "lng": 45.4309, "country": "IQ", "population": 800000 }
+]

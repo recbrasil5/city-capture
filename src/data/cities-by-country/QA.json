@@ -1,0 +1,5 @@
+[
+  { "name": "Doha", "lat": 25.2854, "lng": 51.5310, "country": "QA", "population": 956457 },
+  { "name": "Al Rayyan", "lat": 25.2867, "lng": 51.4244, "country": "QA", "population": 605712 },
+  { "name": "Umm Salal", "lat": 25.4167, "lng": 51.4000, "country": "QA", "population": 101500 }
+]

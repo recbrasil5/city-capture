@@ -1,0 +1,12 @@
+[
+  { "name": "Lagos", "lat": 6.5244, "lng": 3.3792, "country": "NG", "population": 15000000 },
+  { "name": "Kano", "lat": 12.0000, "lng": 8.5167, "country": "NG", "population": 3848885 },
+  { "name": "Ibadan", "lat": 7.3964, "lng": 3.9167, "country": "NG", "population": 3565108 },
+  { "name": "Abuja", "lat": 9.0765, "lng": 7.3986, "country": "NG", "population": 1235880 },
+  { "name": "Port Harcourt", "lat": 4.8156, "lng": 7.0498, "country": "NG", "population": 1865000 },
+  { "name": "Benin City", "lat": 6.3350, "lng": 5.6037, "country": "NG", "population": 1490000 },
+  { "name": "Kaduna", "lat": 10.5167, "lng": 7.4333, "country": "NG", "population": 760084 },
+  { "name": "Maiduguri", "lat": 11.8333, "lng": 13.1500, "country": "NG", "population": 1197497 },
+  { "name": "Zaria", "lat": 11.0667, "lng": 7.7000, "country": "NG", "population": 736000 },
+  { "name": "Aba", "lat": 5.1167, "lng": 7.3667, "country": "NG", "population": 534265 }
+]

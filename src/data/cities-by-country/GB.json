@@ -1,0 +1,12 @@
+[
+  { "name": "London", "lat": 51.5074, "lng": -0.1278, "country": "GB", "population": 8982000 },
+  { "name": "Birmingham", "lat": 52.4862, "lng": -1.8904, "country": "GB", "population": 1141816 },
+  { "name": "Manchester", "lat": 53.4808, "lng": -2.2426, "country": "GB", "population": 553230 },
+  { "name": "Glasgow", "lat": 55.8642, "lng": -4.2518, "country": "GB", "population": 633120 },
+  { "name": "Liverpool", "lat": 53.4084, "lng": -2.9916, "country": "GB", "population": 498042 },
+  { "name": "Leeds", "lat": 53.8008, "lng": -1.5491, "country": "GB", "population": 789194 },
+  { "name": "Sheffield", "lat": 53.3811, "lng": -1.4701, "country": "GB", "population": 584853 },
+  { "name": "Edinburgh", "lat": 55.9533, "lng": -3.1883, "country": "GB", "population": 488050 },
+  { "name": "Bristol", "lat": 51.4545, "lng": -2.5879, "country": "GB", "population": 463400 },
+  { "name": "Cardiff", "lat": 51.4816, "lng": -3.1791, "country": "GB", "population": 364248 }
+]

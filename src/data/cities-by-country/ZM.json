@@ -1,0 +1,6 @@
+[
+  { "name": "Lusaka", "lat": -15.3875, "lng": 28.3228, "country": "ZM", "population": 2673000 },
+  { "name": "Kitwe", "lat": -12.8024, "lng": 28.2132, "country": "ZM", "population": 522092 },
+  { "name": "Ndola", "lat": -12.9690, "lng": 28.6366, "country": "ZM", "population": 475194 },
+  { "name": "Kabwe", "lat": -14.4469, "lng": 28.4464, "country": "ZM", "population": 202914 }
+]

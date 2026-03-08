@@ -1,0 +1,5 @@
+[
+  { "name": "Cotonou", "lat": 6.3654, "lng": 2.4183, "country": "BJ", "population": 679012 },
+  { "name": "Porto-Novo", "lat": 6.4969, "lng": 2.6283, "country": "BJ", "population": 264320 },
+  { "name": "Parakou", "lat": 9.3372, "lng": 2.6303, "country": "BJ", "population": 255478 }
+]
