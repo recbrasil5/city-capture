@@ -1,0 +1,6 @@
+[
+  { "name": "Sana'a", "lat": 15.3694, "lng": 44.1910, "country": "YE", "population": 2957000 },
+  { "name": "Aden", "lat": 12.7855, "lng": 45.0187, "country": "YE", "population": 865000 },
+  { "name": "Taiz", "lat": 13.5795, "lng": 44.0209, "country": "YE", "population": 615000 },
+  { "name": "Al Hudaydah", "lat": 14.7978, "lng": 42.9545, "country": "YE", "population": 400000 }
+]

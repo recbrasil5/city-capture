@@ -1,0 +1,5 @@
+[
+  { "name": "Ashgabat", "lat": 37.9601, "lng": 58.3261, "country": "TM", "population": 1031992 },
+  { "name": "Türkmenabat", "lat": 39.0733, "lng": 63.5786, "country": "TM", "population": 271000 },
+  { "name": "Daşoguz", "lat": 41.8363, "lng": 59.9650, "country": "TM", "population": 210000 }
+]

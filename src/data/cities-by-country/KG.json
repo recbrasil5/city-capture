@@ -1,0 +1,5 @@
+[
+  { "name": "Bishkek", "lat": 42.8746, "lng": 74.5698, "country": "KG", "population": 1088900 },
+  { "name": "Osh", "lat": 40.5333, "lng": 72.7833, "country": "KG", "population": 322164 },
+  { "name": "Jalal-Abad", "lat": 40.9333, "lng": 73.0000, "country": "KG", "population": 111976 }
+]
