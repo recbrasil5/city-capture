@@ -2093,13 +2093,6 @@
     path-browserify "^1.0.1"
     vscode-uri "^3.0.8"
 
-"@vue-leaflet/vue-leaflet@^0.10.1":
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/@vue-leaflet/vue-leaflet/-/vue-leaflet-0.10.1.tgz#17330515629d500ac113009a49f8cf98d140e8cc"
-  integrity sha512-RNEDk8TbnwrJl8ujdbKgZRFygLCxd0aBcWLQ05q/pGv4+d0jamE3KXQgQBqGAteE1mbQsk3xoNcqqUgaIGfWVg==
-  dependencies:
-    vue "^3.2.25"
-
 "@vue-macros/common@^3.1.1":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@vue-macros/common/-/common-3.1.2.tgz#6b5f71ea219732fc955fdcfb15a95a417b87a0fe"
@@ -2705,11 +2698,6 @@ kolorist@^1.8.0:
   resolved "https://registry.yarnpkg.com/kolorist/-/kolorist-1.8.0.tgz#edddbbbc7894bc13302cdf740af6374d4a04743c"
   integrity sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==
 
-leaflet@^1.9.4:
-  version "1.9.4"
-  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.9.4.tgz#23fae724e282fa25745aff82ca4d394748db7d8d"
-  integrity sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==
-
 local-pkg@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/local-pkg/-/local-pkg-1.1.2.tgz#c03d208787126445303f8161619dc701afa4abb5"
@@ -3261,7 +3249,7 @@ vue-tsc@^3.2.5:
     "@volar/typescript" "2.4.28"
     "@vue/language-core" "3.2.5"
 
-vue@^3.2.25, vue@^3.5.29:
+vue@^3.5.29:
   version "3.5.29"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.5.29.tgz#859a1cc5219eb1228c7ce6f355b27de080517111"
   integrity sha512-BZqN4Ze6mDQVNAni0IHeMJ5mwr8VAJ3MQC9FmprRhcBYENw+wOAAjRj8jfmN6FLl0j96OXbR+CjWhmAmM+QGnA==

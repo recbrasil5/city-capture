@@ -37,4 +37,5 @@ export interface CompareResult {
   distanceMiles: number;
   greatCircleKm: number;
   greatCircleMiles: number;
+  arcPoints: [number, number][];
 }
