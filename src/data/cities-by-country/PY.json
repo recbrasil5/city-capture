@@ -1,0 +1,5 @@
+[
+  { "name": "Asunción", "lat": -25.2637, "lng": -57.5759, "country": "PY", "population": 525294 },
+  { "name": "Ciudad del Este", "lat": -25.5167, "lng": -54.6167, "country": "PY", "population": 301815 },
+  { "name": "San Lorenzo", "lat": -25.3333, "lng": -57.5333, "country": "PY", "population": 252561 }
+]

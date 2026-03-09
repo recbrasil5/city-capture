@@ -1,0 +1,12 @@
+[
+  { "name": "Cairo", "lat": 30.0444, "lng": 31.2357, "country": "EG", "population": 10230350 },
+  { "name": "Alexandria", "lat": 31.2001, "lng": 29.9187, "country": "EG", "population": 5200000 },
+  { "name": "Giza", "lat": 30.0131, "lng": 31.2089, "country": "EG", "population": 4239988 },
+  { "name": "Shubra El Kheima", "lat": 30.1286, "lng": 31.2422, "country": "EG", "population": 1030000 },
+  { "name": "Port Said", "lat": 31.2653, "lng": 32.3019, "country": "EG", "population": 603787 },
+  { "name": "Suez", "lat": 29.9668, "lng": 32.5498, "country": "EG", "population": 744189 },
+  { "name": "El Mahalla El Kubra", "lat": 30.9700, "lng": 31.1700, "country": "EG", "population": 535278 },
+  { "name": "Luxor", "lat": 25.6872, "lng": 32.6396, "country": "EG", "population": 506588 },
+  { "name": "Mansoura", "lat": 31.0409, "lng": 31.3785, "country": "EG", "population": 480000 },
+  { "name": "Tanta", "lat": 30.7865, "lng": 31.0004, "country": "EG", "population": 421076 }
+]

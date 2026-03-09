@@ -1,0 +1,11 @@
+[
+  { "name": "Managua", "lat": 12.1364, "lng": -86.2514, "country": "NI", "population": 1028808 },
+  { "name": "León", "lat": 12.4356, "lng": -86.8794, "country": "NI", "population": 212504 },
+  { "name": "Masaya", "lat": 11.9667, "lng": -86.1000, "country": "NI", "population": 140000 },
+  { "name": "Chinandega", "lat": 12.6303, "lng": -87.1300, "country": "NI", "population": 133700 },
+  { "name": "Matagalpa", "lat": 12.9167, "lng": -85.9167, "country": "NI", "population": 150000 },
+  { "name": "Estelí", "lat": 13.0833, "lng": -86.3500, "country": "NI", "population": 129000 },
+  { "name": "Granada", "lat": 11.9333, "lng": -85.9500, "country": "NI", "population": 104000 },
+  { "name": "Jinotega", "lat": 13.1000, "lng": -86.0000, "country": "NI", "population": 56000 },
+  { "name": "Juigalpa", "lat": 12.1000, "lng": -85.3833, "country": "NI", "population": 53000 }
+]

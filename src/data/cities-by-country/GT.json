@@ -1,0 +1,5 @@
+[
+  { "name": "Guatemala City", "lat": 14.6349, "lng": -90.5069, "country": "GT", "population": 2450000 },
+  { "name": "Mixco", "lat": 14.6333, "lng": -90.6064, "country": "GT", "population": 483705 },
+  { "name": "Villa Nueva", "lat": 14.5269, "lng": -90.5875, "country": "GT", "population": 618397 }
+]

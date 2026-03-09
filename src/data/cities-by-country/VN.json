@@ -1,0 +1,6 @@
+[
+  { "name": "Ho Chi Minh City", "lat": 10.8231, "lng": 106.6297, "country": "VN", "population": 9000000 },
+  { "name": "Hanoi", "lat": 21.0285, "lng": 105.8542, "country": "VN", "population": 8000000 },
+  { "name": "Haiphong", "lat": 20.8449, "lng": 106.6881, "country": "VN", "population": 2103500 },
+  { "name": "Da Nang", "lat": 16.0544, "lng": 108.2022, "country": "VN", "population": 1133000 }
+]

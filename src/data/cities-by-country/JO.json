@@ -1,0 +1,7 @@
+[
+  { "name": "Amman", "lat": 31.9539, "lng": 35.9106, "country": "JO", "population": 4007526 },
+  { "name": "Zarqa", "lat": 32.0728, "lng": 36.0870, "country": "JO", "population": 635160 },
+  { "name": "Irbid", "lat": 32.5556, "lng": 35.8500, "country": "JO", "population": 502714 },
+  { "name": "Russeifa", "lat": 32.0178, "lng": 36.0464, "country": "JO", "population": 472604 },
+  { "name": "Aqaba", "lat": 29.5267, "lng": 35.0078, "country": "JO", "population": 188160 }
+]

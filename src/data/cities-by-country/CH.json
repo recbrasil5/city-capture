@@ -1,0 +1,7 @@
+[
+  { "name": "Zürich", "lat": 47.3769, "lng": 8.5417, "country": "CH", "population": 402762 },
+  { "name": "Geneva", "lat": 46.2044, "lng": 6.1432, "country": "CH", "population": 203856 },
+  { "name": "Basel", "lat": 47.5596, "lng": 7.5886, "country": "CH", "population": 177654 },
+  { "name": "Lausanne", "lat": 46.5197, "lng": 6.6323, "country": "CH", "population": 140000 },
+  { "name": "Bern", "lat": 46.9480, "lng": 7.4474, "country": "CH", "population": 133798 }
+]

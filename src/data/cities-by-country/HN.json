@@ -1,0 +1,10 @@
+[
+  { "name": "Tegucigalpa", "lat": 14.0723, "lng": -87.1921, "country": "HN", "population": 1126534 },
+  { "name": "San Pedro Sula", "lat": 15.5000, "lng": -88.0333, "country": "HN", "population": 809000 },
+  { "name": "Choloma", "lat": 15.6144, "lng": -87.9530, "country": "HN", "population": 256000 },
+  { "name": "La Ceiba", "lat": 15.7833, "lng": -86.8000, "country": "HN", "population": 196000 },
+  { "name": "El Progreso", "lat": 15.4000, "lng": -87.8000, "country": "HN", "population": 119000 },
+  { "name": "Comayagua", "lat": 14.4600, "lng": -87.6400, "country": "HN", "population": 105000 },
+  { "name": "Puerto Cortés", "lat": 15.8333, "lng": -87.9500, "country": "HN", "population": 60000 },
+  { "name": "Danlí", "lat": 14.0333, "lng": -86.5833, "country": "HN", "population": 97000 }
+]

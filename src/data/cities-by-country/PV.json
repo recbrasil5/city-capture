@@ -1,0 +1,12 @@
+[
+  { "name": "Asunción", "lat": -25.2637, "lng": -57.5759, "country": "PY", "population": 525294 },
+  { "name": "Ciudad del Este", "lat": -25.5167, "lng": -54.6167, "country": "PY", "population": 301815 },
+  { "name": "San Lorenzo", "lat": -25.3400, "lng": -57.5200, "country": "PY", "population": 252561 },
+  { "name": "Luque", "lat": -25.2667, "lng": -57.4833, "country": "PY", "population": 263604 },
+  { "name": "Capiatá", "lat": -25.3500, "lng": -57.4167, "country": "PY", "population": 224152 },
+  { "name": "Lambaré", "lat": -25.3500, "lng": -57.6333, "country": "PY", "population": 170576 },
+  { "name": "Fernando de la Mora", "lat": -25.3167, "lng": -57.5333, "country": "PY", "population": 183390 },
+  { "name": "Limpio", "lat": -25.1667, "lng": -57.4833, "country": "PY", "population": 101410 },
+  { "name": "Ñemby", "lat": -25.3833, "lng": -57.5500, "country": "PY", "population": 126817 },
+  { "name": "Encarnación", "lat": -27.3333, "lng": -55.8667, "country": "PY", "population": 127527 }
+]

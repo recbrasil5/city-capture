@@ -1,0 +1,5 @@
+[
+  { "name": "Dushanbe", "lat": 38.5598, "lng": 68.7870, "country": "TJ", "population": 863400 },
+  { "name": "Khujand", "lat": 40.2833, "lng": 69.6333, "country": "TJ", "population": 181600 },
+  { "name": "Kulob", "lat": 37.9114, "lng": 69.7842, "country": "TJ", "population": 110800 }
+]

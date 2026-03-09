@@ -1,0 +1,7 @@
+[
+  { "name": "Kyiv", "lat": 50.4501, "lng": 30.5234, "country": "UA", "population": 2967000 },
+  { "name": "Kharkiv", "lat": 49.9935, "lng": 36.2304, "country": "UA", "population": 1431000 },
+  { "name": "Odesa", "lat": 46.4825, "lng": 30.7233, "country": "UA", "population": 1011000 },
+  { "name": "Dnipro", "lat": 48.4647, "lng": 35.0462, "country": "UA", "population": 980948 },
+  { "name": "Lviv", "lat": 49.8397, "lng": 24.0297, "country": "UA", "population": 717803 }
+]

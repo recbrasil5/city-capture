@@ -1,0 +1,6 @@
+[
+  { "name": "Vienna", "lat": 48.2082, "lng": 16.3738, "country": "AT", "population": 1950000 },
+  { "name": "Graz", "lat": 47.0707, "lng": 15.4395, "country": "AT", "population": 295000 },
+  { "name": "Linz", "lat": 48.3069, "lng": 14.2858, "country": "AT", "population": 206000 },
+  { "name": "Salzburg", "lat": 47.8095, "lng": 13.0550, "country": "AT", "population": 156872 }
+]

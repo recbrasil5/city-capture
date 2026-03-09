@@ -1,0 +1,13 @@
+[
+  { "name": "Luanda", "lat": -8.8383, "lng": 13.2344, "country": "AO", "population": 10421300 },
+  { "name": "Huambo", "lat": -12.7761, "lng": 15.7392, "country": "AO", "population": 2261450 },
+  { "name": "Lobito", "lat": -12.3644, "lng": 13.5360, "country": "AO", "population": 2079571 },
+  { "name": "Benguela", "lat": -12.5763, "lng": 13.4055, "country": "AO", "population": 913769 },
+  { "name": "Lubango", "lat": -14.9172, "lng": 13.4925, "country": "AO", "population": 1092900 },
+  { "name": "Malanje", "lat": -9.5400, "lng": 16.3400, "country": "AO", "population": 900002 },
+  { "name": "Cabinda", "lat": -5.5500, "lng": 12.2000, "country": "AO", "population": 1033860 },
+  { "name": "Kuito", "lat": -12.3833, "lng": 16.9333, "country": "AO", "population": 450881 },
+  { "name": "Soyo", "lat": -6.1333, "lng": 12.3667, "country": "AO", "population": 200920 },
+  { "name": "Uíge", "lat": -7.6167, "lng": 15.0500, "country": "AO", "population": 119815 },
+  { "name": "Moçâmedes", "lat": -15.1961, "lng": 12.1522, "country": "AO", "population": 143000 }
+]

@@ -1,0 +1,6 @@
+[
+  { "name": "Harare", "lat": -17.8252, "lng": 31.0335, "country": "ZW", "population": 1572000 },
+  { "name": "Bulawayo", "lat": -20.1325, "lng": 28.6265, "country": "ZW", "population": 653337 },
+  { "name": "Chitungwiza", "lat": -18.0127, "lng": 31.0756, "country": "ZW", "population": 356840 },
+  { "name": "Mutare", "lat": -18.9707, "lng": 32.6709, "country": "ZW", "population": 184205 }
+]

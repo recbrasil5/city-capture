@@ -1,0 +1,6 @@
+[
+  { "name": "Abidjan", "lat": 5.3453, "lng": -4.0244, "country": "CI", "population": 4765000 },
+  { "name": "Bouaké", "lat": 7.6833, "lng": -5.0167, "country": "CI", "population": 536189 },
+  { "name": "Daloa", "lat": 6.8833, "lng": -6.4500, "country": "CI", "population": 261789 },
+  { "name": "San-Pédro", "lat": 4.7485, "lng": -6.6363, "country": "CI", "population": 196751 }
+]

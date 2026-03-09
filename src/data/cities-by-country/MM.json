@@ -1,0 +1,5 @@
+[
+  { "name": "Yangon", "lat": 16.8409, "lng": 96.1735, "country": "MM", "population": 5446000 },
+  { "name": "Mandalay", "lat": 21.9588, "lng": 96.0891, "country": "MM", "population": 1225548 },
+  { "name": "Naypyidaw", "lat": 19.7633, "lng": 96.0785, "country": "MM", "population": 1160242 }
+]

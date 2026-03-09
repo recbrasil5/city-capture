@@ -1,0 +1,7 @@
+[
+  { "name": "Oslo", "lat": 59.9139, "lng": 10.7522, "country": "NO", "population": 709037 },
+  { "name": "Bergen", "lat": 60.3925, "lng": 5.3233, "country": "NO", "population": 286930 },
+  { "name": "Stavanger", "lat": 58.9690, "lng": 5.7331, "country": "NO", "population": 144699 },
+  { "name": "Trondheim", "lat": 63.4305, "lng": 10.3951, "country": "NO", "population": 212660 },
+  { "name": "Drammen", "lat": 59.7439, "lng": 10.2045, "country": "NO", "population": 101386 }
+]

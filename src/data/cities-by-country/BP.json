@@ -1,0 +1,12 @@
+[
+  { "name": "Santa Cruz de la Sierra", "lat": -17.7833, "lng": -63.1821, "country": "BO", "population": 1839394 },
+  { "name": "El Alto", "lat": -16.5047, "lng": -68.1633, "country": "BO", "population": 974754 },
+  { "name": "La Paz", "lat": -16.4897, "lng": -68.1193, "country": "BO", "population": 816044 },
+  { "name": "Cochabamba", "lat": -17.3895, "lng": -66.1568, "country": "BO", "population": 630587 },
+  { "name": "Oruro", "lat": -17.9833, "lng": -67.1500, "country": "BO", "population": 264683 },
+  { "name": "Sucre", "lat": -19.0333, "lng": -65.2627, "country": "BO", "population": 300000 },
+  { "name": "Tarija", "lat": -21.5355, "lng": -64.7296, "country": "BO", "population": 234000 },
+  { "name": "Potosí", "lat": -19.5836, "lng": -65.7531, "country": "BO", "population": 189652 },
+  { "name": "Sacaba", "lat": -17.4000, "lng": -66.0333, "country": "BO", "population": 150000 },
+  { "name": "Montero", "lat": -17.3333, "lng": -63.2500, "country": "BO", "population": 109503 }
+]

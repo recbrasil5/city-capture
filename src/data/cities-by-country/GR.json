@@ -1,0 +1,9 @@
+[
+  { "name": "Athens", "lat": 37.9838, "lng": 23.7275, "country": "GR", "population": 3153000 },
+  { "name": "Thessaloniki", "lat": 40.6401, "lng": 22.9444, "country": "GR", "population": 1110551 },
+  { "name": "Patras", "lat": 38.2466, "lng": 21.7346, "country": "GR", "population": 214580 },
+  { "name": "Heraklion", "lat": 35.3387, "lng": 25.1442, "country": "GR", "population": 173993 },
+  { "name": "Larissa", "lat": 39.6390, "lng": 22.4191, "country": "GR", "population": 144651 },
+  { "name": "Volos", "lat": 39.3610, "lng": 22.9425, "country": "GR", "population": 144449 },
+  { "name": "Ioannina", "lat": 39.6650, "lng": 20.8537, "country": "GR", "population": 112486 }
+]

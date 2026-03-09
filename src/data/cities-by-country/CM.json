@@ -1,0 +1,6 @@
+[
+  { "name": "Douala", "lat": 4.0511, "lng": 9.7679, "country": "CM", "population": 2446945 },
+  { "name": "Yaoundé", "lat": 3.8480, "lng": 11.5021, "country": "CM", "population": 2440462 },
+  { "name": "Bamenda", "lat": 5.9631, "lng": 10.1591, "country": "CM", "population": 348766 },
+  { "name": "Garoua", "lat": 9.3000, "lng": 13.4000, "country": "CM", "population": 436899 }
+]

@@ -1,0 +1,7 @@
+[
+  { "name": "Budapest", "lat": 47.4979, "lng": 19.0402, "country": "HU", "population": 1756000 },
+  { "name": "Debrecen", "lat": 47.5316, "lng": 21.6273, "country": "HU", "population": 201981 },
+  { "name": "Szeged", "lat": 46.2530, "lng": 20.1414, "country": "HU", "population": 161137 },
+  { "name": "Miskolc", "lat": 48.1035, "lng": 20.7784, "country": "HU", "population": 155650 },
+  { "name": "Pécs", "lat": 46.0727, "lng": 18.2323, "country": "HU", "population": 142873 }
+]

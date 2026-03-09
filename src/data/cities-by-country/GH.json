@@ -1,0 +1,6 @@
+[
+  { "name": "Accra", "lat": 5.6037, "lng": -0.1870, "country": "GH", "population": 2291352 },
+  { "name": "Kumasi", "lat": 6.6666, "lng": -1.6163, "country": "GH", "population": 2069350 },
+  { "name": "Sekondi-Takoradi", "lat": 4.9340, "lng": -1.7137, "country": "GH", "population": 445205 },
+  { "name": "Tamale", "lat": 9.4075, "lng": -0.8533, "country": "GH", "population": 371351 }
+]

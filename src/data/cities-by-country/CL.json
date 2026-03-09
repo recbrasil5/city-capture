@@ -1,0 +1,19 @@
+[
+  { "name": "Santiago", "lat": -33.4489, "lng": -70.6693, "country": "CL", "population": 5743719 },
+  { "name": "Puente Alto", "lat": -33.6167, "lng": -70.5833, "country": "CL", "population": 573935 },
+  { "name": "Antofagasta", "lat": -23.6500, "lng": -70.4000, "country": "CL", "population": 361873 },
+  { "name": "Viña del Mar", "lat": -33.0153, "lng": -71.5500, "country": "CL", "population": 334248 },
+  { "name": "Valparaíso", "lat": -33.0472, "lng": -71.6127, "country": "CL", "population": 296655 },
+  { "name": "Talcahuano", "lat": -36.7167, "lng": -73.1167, "country": "CL", "population": 250348 },
+  { "name": "San Bernardo", "lat": -33.6000, "lng": -70.7167, "country": "CL", "population": 301313 },
+  { "name": "Temuco", "lat": -38.7397, "lng": -72.5984, "country": "CL", "population": 282415 },
+  { "name": "Rancagua", "lat": -34.1700, "lng": -70.7444, "country": "CL", "population": 241774 },
+  { "name": "Iquique", "lat": -20.2167, "lng": -70.1333, "country": "CL", "population": 191468 },
+  { "name": "La Serena", "lat": -29.9027, "lng": -71.2519, "country": "CL", "population": 221054 },
+  { "name": "Coquimbo", "lat": -29.9533, "lng": -71.3436, "country": "CL", "population": 227730 },
+  { "name": "Concepción", "lat": -36.8270, "lng": -73.0503, "country": "CL", "population": 223574 },
+  { "name": "Arica", "lat": -18.4783, "lng": -70.3126, "country": "CL", "population": 222619 },
+  { "name": "Talca", "lat": -35.4264, "lng": -71.6554, "country": "CL", "population": 201797 },
+  { "name": "Chillán", "lat": -36.6066, "lng": -72.1034, "country": "CL", "population": 182289 },
+  { "name": "Los Ángeles", "lat": -37.4697, "lng": -72.3536, "country": "CL", "population": 186000 }
+]

@@ -1,0 +1,11 @@
+[
+  { "name": "Kinshasa", "lat": -4.4419, "lng": 15.2663, "country": "CD", "population": 15000000 },
+  { "name": "Lubumbashi", "lat": -11.6870, "lng": 27.5026, "country": "CD", "population": 2200000 },
+  { "name": "Mbuji-Mayi", "lat": -6.1500, "lng": 23.6000, "country": "CD", "population": 2100000 },
+  { "name": "Kananga", "lat": -5.8950, "lng": 22.4170, "country": "CD", "population": 1100000 },
+  { "name": "Kisangani", "lat": 0.5167, "lng": 25.2000, "country": "CD", "population": 935977 },
+  { "name": "Bukavu", "lat": -2.4900, "lng": 28.8400, "country": "CD", "population": 870954 },
+  { "name": "Goma", "lat": -1.6800, "lng": 29.2200, "country": "CD", "population": 670000 },
+  { "name": "Likasi", "lat": -10.9833, "lng": 26.7333, "country": "CD", "population": 635000 },
+  { "name": "Kolwezi", "lat": -10.7167, "lng": 25.4667, "country": "CD", "population": 573000 }
+]

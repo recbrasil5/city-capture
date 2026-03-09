@@ -1,0 +1,5 @@
+[
+  { "name": "Khartoum", "lat": 15.5007, "lng": 32.5599, "country": "SD", "population": 5180000 },
+  { "name": "Omdurman", "lat": 15.6500, "lng": 32.4800, "country": "SD", "population": 2800000 },
+  { "name": "Port Sudan", "lat": 19.6167, "lng": 37.2167, "country": "SD", "population": 489725 }
+]

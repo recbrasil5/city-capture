@@ -1,0 +1,12 @@
+[
+  { "name": "Tokyo", "lat": 35.6895, "lng": 139.6917, "country": "JP", "population": 13929286 },
+  { "name": "Yokohama", "lat": 35.4437, "lng": 139.6380, "country": "JP", "population": 3775000 },
+  { "name": "Osaka", "lat": 34.6937, "lng": 135.5023, "country": "JP", "population": 2715000 },
+  { "name": "Nagoya", "lat": 35.1815, "lng": 136.9066, "country": "JP", "population": 2296000 },
+  { "name": "Sapporo", "lat": 43.0618, "lng": 141.3545, "country": "JP", "population": 1952000 },
+  { "name": "Fukuoka", "lat": 33.5902, "lng": 130.4017, "country": "JP", "population": 1615000 },
+  { "name": "Kobe", "lat": 34.6901, "lng": 135.1955, "country": "JP", "population": 1538000 },
+  { "name": "Kyoto", "lat": 35.0116, "lng": 135.7681, "country": "JP", "population": 1475000 },
+  { "name": "Kawasaki", "lat": 35.5308, "lng": 139.7036, "country": "JP", "population": 1548000 },
+  { "name": "Saitama", "lat": 35.8617, "lng": 139.6455, "country": "JP", "population": 1331000 }
+]

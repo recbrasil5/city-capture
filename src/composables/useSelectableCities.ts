@@ -1,29 +1,31 @@
-import L from 'leaflet'
-import { useCityStore } from '@/stores/cityStore'
-import { createMarker } from '@/utils/mapUtils'
-import { ref } from 'vue'
+import L from "leaflet";
+import type { City } from "@/types";
 
-export function useSelectableCities(map: L.Map, icon: L.Icon) {
-  const store = useCityStore()
-  const selectedCity = ref(null)
-  const markers: Record<string, L.Marker> = {}
+export function useSelectableCities(
+  map: L.Map,
+  icon: L.Icon,
+  cities: City[]
+) {
+  let routeHandler: ((prev: City | null, next: City) => void) | null = null;
 
-  function loadCitiesWithAirports() {
-    store.cities.forEach(city => {
-      if (!city.airport) return
+  function loadCities() {
+    cities.forEach((city) => {
+      const marker = L.marker([city.lat, city.lng], { icon }).addTo(map);
 
-      const marker = createMarker(city.airport, icon, map)
-      markers[city.code] = marker
+      marker.on("click", () => {
+        if (routeHandler) {
+          routeHandler(null, city);
+        }
+      });
+    });
+  }
 
-      marker.on('click', () => {
-        selectedCity.value = city
-      })
-    })
+  function setRouteHandler(handler: (prev: City | null, next: City) => void) {
+    routeHandler = handler;
   }
 
   return {
-    markers,
-    selectedCity,
-    loadCitiesWithAirports
-  }
+    loadCities,
+    setRouteHandler
+  };
 }

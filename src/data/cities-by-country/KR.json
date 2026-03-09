@@ -1,0 +1,11 @@
+[
+  { "name": "Seoul", "lat": 37.5665, "lng": 126.9780, "country": "KR", "population": 9776000 },
+  { "name": "Busan", "lat": 35.1796, "lng": 129.0756, "country": "KR", "population": 3448737 },
+  { "name": "Incheon", "lat": 37.4563, "lng": 126.7052, "country": "KR", "population": 2957026 },
+  { "name": "Daegu", "lat": 35.8722, "lng": 128.6025, "country": "KR", "population": 2427954 },
+  { "name": "Daejeon", "lat": 36.3504, "lng": 127.3845, "country": "KR", "population": 1475221 },
+  { "name": "Gwangju", "lat": 35.1595, "lng": 126.8526, "country": "KR", "population": 1455048 },
+  { "name": "Suwon", "lat": 37.2636, "lng": 127.0286, "country": "KR", "population": 1194310 },
+  { "name": "Ulsan", "lat": 35.5384, "lng": 129.3114, "country": "KR", "population": 1120000 },
+  { "name": "Changwon", "lat": 35.2285, "lng": 128.6811, "country": "KR", "population": 1046050 }
+]

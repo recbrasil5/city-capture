@@ -1,0 +1,19 @@
+[
+  { "name": "Buenos Aires", "lat": -34.6037, "lng": -58.3816, "country": "AR", "population": 2890151 },
+  { "name": "Córdoba", "lat": -31.4201, "lng": -64.1888, "country": "AR", "population": 1391000 },
+  { "name": "Rosario", "lat": -32.9587, "lng": -60.6930, "country": "AR", "population": 1193605 },
+  { "name": "Mendoza", "lat": -32.8895, "lng": -68.8458, "country": "AR", "population": 937154 },
+  { "name": "La Plata", "lat": -34.9214, "lng": -57.9544, "country": "AR", "population": 740369 },
+  { "name": "Tucumán", "lat": -26.8083, "lng": -65.2176, "country": "AR", "population": 548866 },
+  { "name": "Mar del Plata", "lat": -38.0055, "lng": -57.5426, "country": "AR", "population": 593337 },
+  { "name": "Salta", "lat": -24.7821, "lng": -65.4232, "country": "AR", "population": 535303 },
+  { "name": "Santa Fe", "lat": -31.6333, "lng": -60.7000, "country": "AR", "population": 391164 },
+  { "name": "San Juan", "lat": -31.5375, "lng": -68.5364, "country": "AR", "population": 471389 },
+  { "name": "Resistencia", "lat": -27.4514, "lng": -58.9867, "country": "AR", "population": 290723 },
+  { "name": "Neuquén", "lat": -38.9516, "lng": -68.0591, "country": "AR", "population": 340000 },
+  { "name": "Corrientes", "lat": -27.4806, "lng": -58.8341, "country": "AR", "population": 346334 },
+  { "name": "Posadas", "lat": -27.3671, "lng": -55.8961, "country": "AR", "population": 275028 },
+  { "name": "San Salvador de Jujuy", "lat": -24.1858, "lng": -65.2995, "country": "AR", "population": 257970 },
+  { "name": "Bahía Blanca", "lat": -38.7167, "lng": -62.2667, "country": "AR", "population": 301572 },
+  { "name": "Paraná", "lat": -31.7444, "lng": -60.5175, "country": "AR", "population": 247863 }
+]

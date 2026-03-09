@@ -1,0 +1,9 @@
+[
+  { "name": "Lisbon", "lat": 38.7223, "lng": -9.1393, "country": "PT", "population": 544851 },
+  { "name": "Porto", "lat": 41.1579, "lng": -8.6291, "country": "PT", "population": 231962 },
+  { "name": "Vila Nova de Gaia", "lat": 41.1336, "lng": -8.6174, "country": "PT", "population": 302295 },
+  { "name": "Amadora", "lat": 38.7538, "lng": -9.2308, "country": "PT", "population": 175872 },
+  { "name": "Braga", "lat": 41.5454, "lng": -8.4265, "country": "PT", "population": 193333 },
+  { "name": "Coimbra", "lat": 40.2033, "lng": -8.4103, "country": "PT", "population": 143396 },
+  { "name": "Funchal", "lat": 32.6669, "lng": -16.9241, "country": "PT", "population": 111892 }
+]

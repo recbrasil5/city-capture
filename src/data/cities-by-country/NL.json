@@ -1,0 +1,7 @@
+[
+  { "name": "Warsaw", "lat": 52.2297, "lng": 21.0122, "country": "PL", "population": 1793579 },
+  { "name": "Kraków", "lat": 50.0647, "lng": 19.9450, "country": "PL", "population": 779115 },
+  { "name": "Łódź", "lat": 51.7592, "lng": 19.4550, "country": "PL", "population": 672185 },
+  { "name": "Wrocław", "lat": 51.1079, "lng": 17.0385, "country": "PL", "population": 642687 },
+  { "name": "Poznań", "lat": 52.4064, "lng": 16.9252, "country": "PL", "population": 534813 }
+]

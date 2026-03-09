@@ -1,0 +1,9 @@
+[
+  { "name": "Karachi", "lat": 24.8607, "lng": 67.0011, "country": "PK", "population": 14910352 },
+  { "name": "Lahore", "lat": 31.5204, "lng": 74.3587, "country": "PK", "population": 11126285 },
+  { "name": "Faisalabad", "lat": 31.4180, "lng": 73.0790, "country": "PK", "population": 3203846 },
+  { "name": "Rawalpindi", "lat": 33.5651, "lng": 73.0169, "country": "PK", "population": 2098231 },
+  { "name": "Multan", "lat": 30.1575, "lng": 71.5249, "country": "PK", "population": 1871843 },
+  { "name": "Peshawar", "lat": 34.0151, "lng": 71.5249, "country": "PK", "population": 1970042 },
+  { "name": "Islamabad", "lat": 33.6844, "lng": 73.0479, "country": "PK", "population": 1095064 }
+]

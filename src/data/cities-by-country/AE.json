@@ -1,0 +1,7 @@
+[
+  { "name": "Dubai", "lat": 25.2048, "lng": 55.2708, "country": "AE", "population": 3500000 },
+  { "name": "Abu Dhabi", "lat": 24.4539, "lng": 54.3773, "country": "AE", "population": 1450000 },
+  { "name": "Sharjah", "lat": 25.3463, "lng": 55.4209, "country": "AE", "population": 1400000 },
+  { "name": "Al Ain", "lat": 24.2075, "lng": 55.7447, "country": "AE", "population": 766936 },
+  { "name": "Ajman", "lat": 25.4052, "lng": 55.5136, "country": "AE", "population": 504846 }
+]

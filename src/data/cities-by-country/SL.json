@@ -1,0 +1,5 @@
+[
+  { "name": "Freetown", "lat": 8.4844, "lng": -13.2344, "country": "SL", "population": 1270000 },
+  { "name": "Bo", "lat": 7.9647, "lng": -11.7383, "country": "SL", "population": 233684 },
+  { "name": "Kenema", "lat": 7.8767, "lng": -11.1875, "country": "SL", "population": 200354 }
+]

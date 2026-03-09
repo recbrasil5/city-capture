@@ -1,0 +1,7 @@
+[
+  { "name": "Dakar", "lat": 14.7167, "lng": -17.4677, "country": "SN", "population": 1146053 },
+  { "name": "Thiès", "lat": 14.7833, "lng": -16.9667, "country": "SN", "population": 320000 },
+  { "name": "Kaolack", "lat": 14.1389, "lng": -16.0764, "country": "SN", "population": 277812 },
+  { "name": "Saint-Louis", "lat": 16.0333, "lng": -16.5000, "country": "SN", "population": 277245 },
+  { "name": "Ziguinchor", "lat": 12.5833, "lng": -16.2667, "country": "SN", "population": 205294 }
+]

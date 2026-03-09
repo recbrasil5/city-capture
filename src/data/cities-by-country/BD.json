@@ -1,0 +1,7 @@
+[
+  { "name": "Dhaka", "lat": 23.8103, "lng": 90.4125, "country": "BD", "population": 21000000 },
+  { "name": "Chittagong", "lat": 22.3475, "lng": 91.8123, "country": "BD", "population": 3920222 },
+  { "name": "Khulna", "lat": 22.8456, "lng": 89.5403, "country": "BD", "population": 663342 },
+  { "name": "Rajshahi", "lat": 24.3745, "lng": 88.6042, "country": "BD", "population": 449756 },
+  { "name": "Sylhet", "lat": 24.8949, "lng": 91.8687, "country": "BD", "population": 479837 }
+]

@@ -1,0 +1,17 @@
+[
+  { "name": "Moscow", "lat": 55.7558, "lng": 37.6173, "country": "RU", "population": 12655050 },
+  { "name": "Saint Petersburg", "lat": 59.9311, "lng": 30.3609, "country": "RU", "population": 5384342 },
+  { "name": "Novosibirsk", "lat": 55.0084, "lng": 82.9357, "country": "RU", "population": 1620162 },
+  { "name": "Yekaterinburg", "lat": 56.8389, "lng": 60.6057, "country": "RU", "population": 1493749 },
+  { "name": "Kazan", "lat": 55.8304, "lng": 49.0661, "country": "RU", "population": 1257391 },
+  { "name": "Nizhny Novgorod", "lat": 56.2965, "lng": 43.9361, "country": "RU", "population": 1228300 },
+  { "name": "Chelyabinsk", "lat": 55.1644, "lng": 61.4368, "country": "RU", "population": 1202371 },
+  { "name": "Samara", "lat": 53.1959, "lng": 50.1008, "country": "RU", "population": 1144759 },
+  { "name": "Omsk", "lat": 54.9885, "lng": 73.3242, "country": "RU", "population": 1136491 },
+  { "name": "Rostov-on-Don", "lat": 47.2357, "lng": 39.7015, "country": "RU", "population": 1130305 },
+  { "name": "Ufa", "lat": 54.7388, "lng": 55.9721, "country": "RU", "population": 1128781 },
+  { "name": "Krasnoyarsk", "lat": 56.0153, "lng": 92.8932, "country": "RU", "population": 1095286 },
+  { "name": "Perm", "lat": 58.0105, "lng": 56.2502, "country": "RU", "population": 1048000 },
+  { "name": "Voronezh", "lat": 51.6608, "lng": 39.2003, "country": "RU", "population": 1054537 },
+  { "name": "Volgograd", "lat": 48.7080, "lng": 44.5133, "country": "RU", "population": 1006964 }
+]

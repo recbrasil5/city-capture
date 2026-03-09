@@ -1,0 +1,5 @@
+[
+  { "name": "San Salvador", "lat": 13.6929, "lng": -89.2182, "country": "SV", "population": 567698 },
+  { "name": "Soyapango", "lat": 13.7102, "lng": -89.1390, "country": "SV", "population": 241403 },
+  { "name": "Santa Ana", "lat": 13.9942, "lng": -89.5597, "country": "SV", "population": 253000 }
+]

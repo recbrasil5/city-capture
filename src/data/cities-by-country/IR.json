@@ -1,0 +1,18 @@
+[
+  { "name": "Tehran", "lat": 35.6892, "lng": 51.3890, "country": "IR", "population": 8846782 },
+  { "name": "Mashhad", "lat": 36.2605, "lng": 59.6168, "country": "IR", "population": 3001184 },
+  { "name": "Isfahan", "lat": 32.6539, "lng": 51.6660, "country": "IR", "population": 1961260 },
+  { "name": "Karaj", "lat": 35.8400, "lng": 50.9391, "country": "IR", "population": 1592492 },
+  { "name": "Shiraz", "lat": 29.5918, "lng": 52.5837, "country": "IR", "population": 1565572 },
+  { "name": "Tabriz", "lat": 38.0962, "lng": 46.2738, "country": "IR", "population": 1558693 },
+  { "name": "Qom", "lat": 34.6401, "lng": 50.8764, "country": "IR", "population": 1201158 },
+  { "name": "Ahvaz", "lat": 31.3183, "lng": 48.6706, "country": "IR", "population": 1184788 },
+  { "name": "Kermanshah", "lat": 34.3142, "lng": 47.0650, "country": "IR", "population": 946651 },
+  { "name": "Urmia", "lat": 37.5527, "lng": 45.0761, "country": "IR", "population": 736224 },
+  { "name": "Rasht", "lat": 37.2808, "lng": 49.5832, "country": "IR", "population": 679995 },
+  { "name": "Zahedan", "lat": 29.4963, "lng": 60.8629, "country": "IR", "population": 587730 },
+  { "name": "Hamadan", "lat": 34.7992, "lng": 48.5146, "country": "IR", "population": 554406 },
+  { "name": "Kerman", "lat": 30.2839, "lng": 57.0834, "country": "IR", "population": 537718 },
+  { "name": "Yazd", "lat": 31.8974, "lng": 54.3569, "country": "IR", "population": 529673 },
+  { "name": "Arak", "lat": 34.0917, "lng": 49.6892, "country": "IR", "population": 526182 }
+]

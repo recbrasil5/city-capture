@@ -1,0 +1,6 @@
+[
+  { "name": "Bangkok", "lat": 13.7563, "lng": 100.5018, "country": "TH", "population": 10539000 },
+  { "name": "Nonthaburi", "lat": 13.8621, "lng": 100.5144, "country": "TH", "population": 270609 },
+  { "name": "Chiang Mai", "lat": 18.7883, "lng": 98.9853, "country": "TH", "population": 127240 },
+  { "name": "Hat Yai", "lat": 7.0084, "lng": 100.4740, "country": "TH", "population": 157000 }
+]

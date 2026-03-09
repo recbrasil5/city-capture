@@ -1,0 +1,9 @@
+[
+  { "name": "Sydney", "lat": -33.8688, "lng": 151.2093, "country": "AU", "population": 5312163 },
+  { "name": "Melbourne", "lat": -37.8136, "lng": 144.9631, "country": "AU", "population": 5078193 },
+  { "name": "Brisbane", "lat": -27.4698, "lng": 153.0251, "country": "AU", "population": 2514184 },
+  { "name": "Perth", "lat": -31.9523, "lng": 115.8613, "country": "AU", "population": 2149858 },
+  { "name": "Adelaide", "lat": -34.9285, "lng": 138.6007, "country": "AU", "population": 1378149 },
+  { "name": "Gold Coast", "lat": -28.0167, "lng": 153.4000, "country": "AU", "population": 679127 },
+  { "name": "Canberra", "lat": -35.2809, "lng": 149.1300, "country": "AU", "population": 472000 }
+]

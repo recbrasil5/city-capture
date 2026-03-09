@@ -1,0 +1,22 @@
+[
+  { "name": "Bogotá", "lat": 4.7110, "lng": -74.0721, "country": "CO", "population": 7743955 },
+  { "name": "Medellín", "lat": 6.2442, "lng": -75.5812, "country": "CO", "population": 2529403 },
+  { "name": "Cali", "lat": 3.4516, "lng": -76.5320, "country": "CO", "population": 2394878 },
+  { "name": "Barranquilla", "lat": 10.9685, "lng": -74.7813, "country": "CO", "population": 1274250 },
+  { "name": "Cartagena", "lat": 10.3910, "lng": -75.4794, "country": "CO", "population": 914552 },
+  { "name": "Cúcuta", "lat": 7.8939, "lng": -72.5078, "country": "CO", "population": 777106 },
+  { "name": "Soledad", "lat": 10.9184, "lng": -74.7646, "country": "CO", "population": 683486 },
+  { "name": "Bucaramanga", "lat": 7.1193, "lng": -73.1227, "country": "CO", "population": 581130 },
+  { "name": "Soacha", "lat": 4.5794, "lng": -74.2168, "country": "CO", "population": 658552 },
+  { "name": "Ibagué", "lat": 4.4389, "lng": -75.2322, "country": "CO", "population": 541101 },
+  { "name": "Villavicencio", "lat": 4.1420, "lng": -73.6266, "country": "CO", "population": 531275 },
+  { "name": "Santa Marta", "lat": 11.2408, "lng": -74.1990, "country": "CO", "population": 499192 },
+  { "name": "Pereira", "lat": 4.8143, "lng": -75.6946, "country": "CO", "population": 473525 },
+  { "name": "Manizales", "lat": 5.0703, "lng": -75.5138, "country": "CO", "population": 434403 },
+  { "name": "Pasto", "lat": 1.2136, "lng": -77.2811, "country": "CO", "population": 392930 },
+  { "name": "Montería", "lat": 8.7500, "lng": -75.8833, "country": "CO", "population": 400937 },
+  { "name": "Neiva", "lat": 2.9273, "lng": -75.2819, "country": "CO", "population": 357392 },
+  { "name": "Armenia", "lat": 4.5339, "lng": -75.6811, "country": "CO", "population": 301226 },
+  { "name": "Sincelejo", "lat": 9.3047, "lng": -75.3978, "country": "CO", "population": 273869 },
+  { "name": "Popayán", "lat": 2.4448, "lng": -76.6147, "country": "CO", "population": 318059 }
+]

@@ -1,0 +1,6 @@
+[
+  { "name": "Tripoli", "lat": 32.8872, "lng": 13.1913, "country": "LY", "population": 1150000 },
+  { "name": "Benghazi", "lat": 32.1167, "lng": 20.0667, "country": "LY", "population": 631555 },
+  { "name": "Misrata", "lat": 32.3783, "lng": 15.0906, "country": "LY", "population": 386120 },
+  { "name": "Zawiya", "lat": 32.7522, "lng": 12.7278, "country": "LY", "population": 200000 }
+]

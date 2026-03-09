@@ -1,0 +1,6 @@
+[
+  { "name": "Kingston", "lat": 17.9714, "lng": -76.7936, "country": "JM", "population": 580000 },
+  { "name": "Spanish Town", "lat": 17.9911, "lng": -76.9572, "country": "JM", "population": 147152 },
+  { "name": "Portmore", "lat": 17.9500, "lng": -76.8670, "country": "JM", "population": 182153 },
+  { "name": "Montego Bay", "lat": 18.4667, "lng": -77.9167, "country": "JM", "population": 110115 }
+]

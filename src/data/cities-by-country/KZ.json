@@ -1,0 +1,6 @@
+[
+  { "name": "Almaty", "lat": 43.2383, "lng": 76.9453, "country": "KZ", "population": 2000900 },
+  { "name": "Astana", "lat": 51.1605, "lng": 71.4704, "country": "KZ", "population": 1300000 },
+  { "name": "Shymkent", "lat": 42.3167, "lng": 69.5950, "country": "KZ", "population": 1080000 },
+  { "name": "Karaganda", "lat": 49.8028, "lng": 73.1022, "country": "KZ", "population": 497777 }
+]

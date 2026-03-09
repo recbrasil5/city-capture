@@ -1,0 +1,17 @@
+[
+  { "name": "Shanghai", "lat": 31.2304, "lng": 121.4737, "country": "CN", "population": 24870895 },
+  { "name": "Beijing", "lat": 39.9042, "lng": 116.4074, "country": "CN", "population": 21893095 },
+  { "name": "Chongqing", "lat": 29.5630, "lng": 106.5516, "country": "CN", "population": 16382376 },
+  { "name": "Guangzhou", "lat": 23.1291, "lng": 113.2644, "country": "CN", "population": 18676605 },
+  { "name": "Shenzhen", "lat": 22.5431, "lng": 114.0579, "country": "CN", "population": 17560000 },
+  { "name": "Tianjin", "lat": 39.3434, "lng": 117.3616, "country": "CN", "population": 13866009 },
+  { "name": "Chengdu", "lat": 30.5728, "lng": 104.0668, "country": "CN", "population": 16330000 },
+  { "name": "Wuhan", "lat": 30.5928, "lng": 114.3055, "country": "CN", "population": 11212000 },
+  { "name": "Xi'an", "lat": 34.3416, "lng": 108.9398, "country": "CN", "population": 12950000 },
+  { "name": "Hangzhou", "lat": 30.2741, "lng": 120.1551, "country": "CN", "population": 11936000 },
+  { "name": "Nanjing", "lat": 32.0603, "lng": 118.7969, "country": "CN", "population": 9422000 },
+  { "name": "Harbin", "lat": 45.8038, "lng": 126.5350, "country": "CN", "population": 10636000 },
+  { "name": "Suzhou", "lat": 31.2989, "lng": 120.5853, "country": "CN", "population": 10750000 },
+  { "name": "Qingdao", "lat": 36.0671, "lng": 120.3826, "country": "CN", "population": 10070000 },
+  { "name": "Dalian", "lat": 38.9140, "lng": 121.6147, "country": "CN", "population": 7450000 }
+]

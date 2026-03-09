@@ -1,0 +1,5 @@
+[
+  { "name": "Serekunda", "lat": 13.4383, "lng": -16.6781, "country": "GM", "population": 340000 },
+  { "name": "Brikama", "lat": 13.2714, "lng": -16.6494, "country": "GM", "population": 102600 },
+  { "name": "Banjul", "lat": 13.4531, "lng": -16.5775, "country": "GM", "population": 31356 }
+]

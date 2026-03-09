@@ -1,0 +1,6 @@
+[
+  { "name": "Windhoek", "lat": -22.5609, "lng": 17.0658, "country": "NA", "population": 431000 },
+  { "name": "Rundu", "lat": -17.9333, "lng": 19.7667, "country": "NA", "population": 58172 },
+  { "name": "Walvis Bay", "lat": -22.9576, "lng": 14.5053, "country": "NA", "population": 85000 },
+  { "name": "Swakopmund", "lat": -22.6833, "lng": 14.5333, "country": "NA", "population": 44725 }
+]

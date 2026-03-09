@@ -1,0 +1,6 @@
+[
+  { "name": "Dar es Salaam", "lat": -6.7924, "lng": 39.2083, "country": "TZ", "population": 4364541 },
+  { "name": "Mwanza", "lat": -2.5167, "lng": 32.9000, "country": "TZ", "population": 706453 },
+  { "name": "Arusha", "lat": -3.3667, "lng": 36.6833, "country": "TZ", "population": 416442 },
+  { "name": "Dodoma", "lat": -6.1630, "lng": 35.7516, "country": "TZ", "population": 410956 }
+]
