@@ -26,7 +26,17 @@ watch(
   <aside class="city-panel">
     <button class="close-btn" @click="emit('close')">×</button>
 
+    <img
+      v-if="details?.photoUrl"
+      class="hero"
+      :src="details.photoUrl"
+    />
+
     <h1>{{ details?.name || city.name }}</h1>
+
+    <p v-if="details?.shortDescription" class="tagline">
+      {{ details.shortDescription }}
+    </p>
 
     <img
       class="flag"
@@ -37,13 +47,30 @@ watch(
       <strong>Population:</strong> {{ city.population.toLocaleString() }}
     </p>
 
+    <p v-if="details?.rating" class="rating">
+      ⭐ {{ details.rating }} ({{ details.ratingCount }} reviews)
+    </p>
+
     <div v-if="loading" class="loading">Loading…</div>
 
     <p v-else-if="details?.summary" class="summary">
       {{ details.summary }}
     </p>
 
-    <p v-else>No description available.</p>
+    <div class="coords" v-if="details?.coordinates">
+      <strong>Coordinates:</strong>
+      {{ details.coordinates.lat.toFixed(4) }},
+      {{ details.coordinates.lng.toFixed(4) }}
+    </div>
+
+    <a
+      v-if="details?.wikiUrl"
+      class="wiki-link"
+      :href="details.wikiUrl"
+      target="_blank"
+    >
+      Read more on Wikipedia →
+    </a>
   </aside>
 </template>
 
@@ -60,36 +87,37 @@ watch(
   position: relative;
 }
 
-.close-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  opacity: 0.6;
-}
-
-.close-btn:hover {
-  opacity: 1;
-}
-
-.flag {
-  width: 48px;
-  margin: 12px 0;
-}
-
-.population {
+.hero {
+  width: 100%;
+  border-radius: 8px;
   margin-bottom: 16px;
 }
 
-.summary {
-  line-height: 1.5;
-  margin-top: 12px;
+.tagline {
+  margin-top: -8px;
+  margin-bottom: 12px;
+  color: #666;
 }
 
-.loading {
-  opacity: 0.7;
+.rating {
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.coords {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.wiki-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.wiki-link:hover {
+  text-decoration: underline;
 }
 </style>

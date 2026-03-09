@@ -1,6 +1,5 @@
 export async function fetchWikipediaSummary(city: string, country: string) {
   try {
-    // 1. Search for the correct page
     const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(
       `${city} ${country}`
     )}&format=json&origin=*`;
@@ -9,12 +8,53 @@ export async function fetchWikipediaSummary(city: string, country: string) {
     if (!searchRes.ok) return null;
 
     const searchData = await searchRes.json();
-    const first = searchData?.query?.search?.[0];
-    if (!first) return null;
+    const results = searchData?.query?.search ?? [];
+    if (!results.length) return null;
 
-    const title = first.title.replace(/ /g, "_");
+    const lowerCity = city.toLowerCase();
 
-    // 2. Fetch the summary for the resolved title
+    // Score each result
+    const scored = results.map((r: any) => {
+      const title = r.title.toLowerCase();
+      const snippet = r.snippet.toLowerCase();
+
+      let score = 0;
+
+      // 1. Exact title match
+      if (title === lowerCity) score += 100;
+
+      // 2. Title starts with city name
+      if (title.startsWith(lowerCity)) score += 40;
+
+      // 3. Title contains city name
+      if (title.includes(lowerCity)) score += 20;
+
+      // 4. Prefer city-like pages
+      if (/city|capital|metropolitan|urban|municipality/.test(snippet)) {
+        score += 30;
+      }
+
+      // 5. Prefer US city pages like "El Paso, Texas"
+      if (/, [A-Z][a-z]+$/.test(r.title)) score += 50;
+
+      // 6. Avoid disambiguation pages
+      if (/disambiguation/.test(title)) score -= 100;
+
+      // 7. Avoid county pages
+      if (/county/.test(title)) score -= 40;
+
+      // 8. Avoid transit/harbor/etc.
+      if (/harbor|transit|rail|airport|station/.test(title)) score -= 30;
+
+      return { ...r, score };
+    });
+
+    // Pick the highest scoring result
+    const best = scored.sort((a, b) => b.score - a.score)[0];
+    if (!best) return null;
+
+    const title = best.title.replace(/ /g, "_");
+
     const summaryUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(
       title
     )}`;
@@ -23,7 +63,7 @@ export async function fetchWikipediaSummary(city: string, country: string) {
     if (!summaryRes.ok) return null;
 
     const summaryData = await summaryRes.json();
-    return summaryData.extract || null;
+    return summaryData;
   } catch {
     return null;
   }
