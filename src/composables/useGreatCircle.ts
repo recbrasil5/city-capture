@@ -1,88 +1,76 @@
-// src/composables/useGreatCircle.ts
+import type { City, CompareResult } from "@/types";
 
 export function useGreatCircle() {
-  type LatLon = [number, number]
+  const R_KM = 6371;
 
-  const toRad = (deg: number): number => (deg * Math.PI) / 180
-  const toDeg = (rad: number): number => (rad * 180) / Math.PI
-
-  function unwrapLongitudes(lon1: number, lon2: number): [number, number] {
-    // If the difference is > 180°, shift one longitude by 360°
-    if (Math.abs(lon2 - lon1) > Math.PI) {
-      if (lon1 > lon2) {
-        lon2 += 2 * Math.PI
-      } else {
-        lon1 += 2 * Math.PI
-      }
-    }
-    return [lon1, lon2]
+  function toRad(deg: number) {
+    return (deg * Math.PI) / 180;
   }
 
-  function greatCirclePoints(start: LatLon, end: LatLon, numPoints = 128): LatLon[] {
-    let lat1 = toRad(start[0])
-    let lon1 = toRad(start[1])
-    let lat2 = toRad(end[0])
-    let lon2 = toRad(end[1])
+  function haversine(a: City, b: City) {
+    const dLat = toRad(b.lat - a.lat);
+    const dLng = toRad(b.lng - a.lng);
 
-    // Unwrap BEFORE interpolation
-    ;[lon1, lon2] = unwrapLongitudes(lon1, lon2)
+    const lat1 = toRad(a.lat);
+    const lat2 = toRad(b.lat);
+
+    const h =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+
+    return 2 * R_KM * Math.asin(Math.sqrt(h));
+  }
+
+  function generateArcPoints(a: City, b: City, steps = 64): [number, number][] {
+    const lat1 = toRad(a.lat);
+    const lng1 = toRad(a.lng);
+    const lat2 = toRad(b.lat);
+    const lng2 = toRad(b.lng);
 
     const d = 2 * Math.asin(
       Math.sqrt(
         Math.sin((lat2 - lat1) / 2) ** 2 +
-          Math.cos(lat1) * Math.cos(lat2) *
-          Math.sin((lon2 - lon1) / 2) ** 2
+          Math.cos(lat1) * Math.cos(lat2) * Math.sin((lng2 - lng1) / 2) ** 2
       )
-    )
+    );
 
-    const denom = Math.sin(d) === 0 ? 1e-9 : Math.sin(d)
-    const points: LatLon[] = []
+    const points: [number, number][] = [];
 
-    for (let i = 0; i <= numPoints; i++) {
-      const f = i / numPoints
-      const A = Math.sin((1 - f) * d) / denom
-      const B = Math.sin(f * d) / denom
+    for (let i = 0; i <= steps; i++) {
+      const f = i / steps;
 
-      const x = A * Math.cos(lat1) * Math.cos(lon1) + B * Math.cos(lat2) * Math.cos(lon2)
-      const y = A * Math.cos(lat1) * Math.sin(lon1) + B * Math.cos(lat2) * Math.sin(lon2)
-      const z = A * Math.sin(lat1) + B * Math.sin(lat2)
+      const A = Math.sin((1 - f) * d) / Math.sin(d);
+      const B = Math.sin(f * d) / Math.sin(d);
 
-      const lat = Math.atan2(z, Math.sqrt(x * x + y * y))
-      let lon = Math.atan2(y, x)
+      const x =
+        A * Math.cos(lat1) * Math.cos(lng1) +
+        B * Math.cos(lat2) * Math.cos(lng2);
+      const y =
+        A * Math.cos(lat1) * Math.sin(lng1) +
+        B * Math.cos(lat2) * Math.sin(lng2);
+      const z = A * Math.sin(lat1) + B * Math.sin(lat2);
 
-      // Normalize AFTER interpolation
-      let lonDeg = toDeg(lon)
-      if (lonDeg > 180) lonDeg -= 360
-      if (lonDeg < -180) lonDeg += 360
+      const lat = Math.atan2(z, Math.sqrt(x * x + y * y));
+      const lng = Math.atan2(y, x);
 
-      points.push([toDeg(lat), lonDeg])
+      points.push([lat * (180 / Math.PI), lng * (180 / Math.PI)]);
     }
 
-    return points
+    return points;
   }
 
-  function greatCircleDistanceMiles(start: LatLon, end: LatLon): number {
-    const R = 3958.8
-    const lat1 = toRad(start[0])
-    const lon1 = toRad(start[1])
-    const lat2 = toRad(end[0])
-    const lon2 = toRad(end[1])
+  function computeCompareResult(a: City, b: City): CompareResult {
+    const greatCircleKm = haversine(a, b);
+    const greatCircleMiles = greatCircleKm * 0.621371;
 
-    const dLat = lat2 - lat1
-    const dLon = lon2 - lon1
-
-    const a =
-      Math.sin(dLat / 2) ** 2 +
-      Math.cos(lat1) * Math.cos(lat2) *
-      Math.sin(dLon / 2) ** 2
-
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-
-    return R * c
+    return {
+      distanceKm: greatCircleKm,
+      distanceMiles: greatCircleMiles,
+      greatCircleKm,
+      greatCircleMiles,
+      arcPoints: generateArcPoints(a, b),
+    };
   }
 
-  return {
-    greatCirclePoints,
-    greatCircleDistanceMiles
-  }
+  return { computeCompareResult };
 }

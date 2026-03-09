@@ -1,12 +1,32 @@
+// src/main.ts
 import { createApp } from "vue";
-import { createPinia } from "pinia";
-
 import App from "./App.vue";
 
-import "leaflet/dist/leaflet.css";
+function loadGoogleMaps(apiKey: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    // Already loaded?
+    if (window.google && window.google.maps) {
+      resolve();
+      return;
+    }
 
-const app = createApp(App);
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+    script.async = true;
+    script.defer = true;
 
-app.use(createPinia());
+    script.onload = () => resolve();
+    script.onerror = () => reject("Google Maps failed to load");
 
-app.mount("#app");
+    document.head.appendChild(script);
+  });
+}
+
+async function bootstrap() {
+  await loadGoogleMaps(import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
+
+  const app = createApp(App);
+  app.mount("#app");
+}
+
+bootstrap();
