@@ -1,6 +1,0 @@
-[
-  { "name": "Luanda", "lat": -8.8383, "lng": 13.2344, "country": "AO", "population": 8417000 },
-  { "name": "Huambo", "lat": -12.7761, "lng": 15.7392, "country": "AO", "population": 665000 },
-  { "name": "Benguela", "lat": -12.5763, "lng": 13.4055, "country": "AO", "population": 555124 },
-  { "name": "Lobito", "lat": -12.3600, "lng": 13.5300, "country": "AO", "population": 393079 }
-]

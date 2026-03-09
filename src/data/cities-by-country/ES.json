@@ -18,5 +18,10 @@
   { "name": "A Coruña", "lat": 43.3623, "lng": -8.4115, "country": "ES", "population": 245711 },
   { "name": "Vitoria-Gasteiz", "lat": 42.8467, "lng": -2.6727, "country": "ES", "population": 253996 },
   { "name": "Granada", "lat": 37.1773, "lng": -3.5986, "country": "ES", "population": 233648 },
-  { "name": "Elche", "lat": 38.2699, "lng": -0.7126, "country": "ES", "population": 234765 }
+  { "name": "Elche", "lat": 38.2699, "lng": -0.7126, "country": "ES", "population": 234765 },
+  { "name": "Santa Cruz de Tenerife", "lat": 28.4636, "lng": -16.2518, "country": "ES", "population": 209194 },
+  { "name": "San Cristóbal de La Laguna", "lat": 28.4874, "lng": -16.3159, "country": "ES", "population": 157815 },
+  { "name": "Telde", "lat": 27.9924, "lng": -15.4192, "country": "ES", "population": 102647 },
+  { "name": "Arona", "lat": 28.0997, "lng": -16.6810, "country": "ES", "population": 79377 },
+  { "name": "Arrecife", "lat": 28.9630, "lng": -13.5470, "country": "ES", "population": 64497 }
 ]

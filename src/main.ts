@@ -1,20 +1,12 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import { createApp } from "vue";
+import { createPinia } from "pinia";
 
-import * as L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
-import './assets/global.css'
+import App from "./App.vue";
 
-import App from './App.vue'
+import "leaflet/dist/leaflet.css";
 
-import { LMap, LTileLayer } from '@vue-leaflet/vue-leaflet'
+const app = createApp(App);
 
-const app = createApp(App)
+app.use(createPinia());
 
-app.use(createPinia())
-
-// Register globally
-app.component('LMap', LMap)
-app.component('LTileLayer', LTileLayer)
-
-app.mount('#app')
+app.mount("#app");

@@ -1,41 +1,31 @@
-import L from 'leaflet'
-import { ref } from 'vue'
+import L from "leaflet";
+import type { City } from "@/types";
 
 export function useSelectableCities(
   map: L.Map,
   icon: L.Icon,
-  cities: Array<{ id: string; name: string; lat: number; lng: number }>
+  cities: City[]
 ) {
-  const selectedCity = ref<any>(null)
-  const markers: Record<string, L.Marker> = {}
+  let routeHandler: ((prev: City | null, next: City) => void) | null = null;
 
   function loadCities() {
-    cities.forEach(city => {
-      if (!city.lat || !city.lng) return
+    cities.forEach((city) => {
+      const marker = L.marker([city.lat, city.lng], { icon }).addTo(map);
 
-      const marker = L.marker([city.lat, city.lng], { icon })
-        .addTo(map)
-        .on('click', () => {
-          selectedCity.value = city
-          if (routeHandler.value) {
-            routeHandler.value(selectedCity.value, city)
-          }
-        })
-
-      markers[city.id] = marker
-    })
+      marker.on("click", () => {
+        if (routeHandler) {
+          routeHandler(null, city);
+        }
+      });
+    });
   }
 
-  const routeHandler = ref<null | ((from: any, to: any) => void)>(null)
-
-  function setRouteHandler(fn: (from: any, to: any) => void) {
-    routeHandler.value = fn
+  function setRouteHandler(handler: (prev: City | null, next: City) => void) {
+    routeHandler = handler;
   }
 
   return {
-    markers,
-    selectedCity,
     loadCities,
-    setRouteHandler,
-  }
+    setRouteHandler
+  };
 }
