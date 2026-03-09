@@ -31,15 +31,9 @@ async function loadCountry(code: string): Promise<City[]> {
 function getVisibleCountryCodes(): string[] {
   if (!map.value) return []
 
-  const bounds = map.value.getBounds()
   const codes = new Set<string>()
 
-  // ---------------------------------------------
-  // We will refine this later with a bounding-box
-  // index, but for now we load ALL countries.
-  // This keeps the map functional until the
-  // dataset is fully generated.
-  // ---------------------------------------------
+  // For now, load ALL countries (refine later)
   Object.keys(modules).forEach(path => {
     const code = path.split('/').pop()!.replace('.json', '')
     codes.add(code)
@@ -77,8 +71,13 @@ function renderMarkers(visibleCities: City[]) {
 
   visibleCities.forEach(city => {
     const marker = L.marker([city.lat, city.lng])
+      .bindPopup(`<b>${city.name}</b> — ${city.country}`)
       .addTo(map.value!)
-      .on('click', () => selectCity(city))
+
+    marker.on('click', () => {
+      marker.openPopup()
+      selectCity(city)
+    })
 
     markers.value[`${city.name}-${city.country}`] = marker
   })
@@ -95,13 +94,11 @@ async function updateVisibleCities() {
 
   let allCities: City[] = []
 
-  // Load each country file
   for (const code of countryCodes) {
     const cities = await loadCountry(code)
     allCities.push(...cities)
   }
 
-  // Filter by population + viewport
   const visible = allCities
     .filter(c => c.population >= 50000)
     .filter(c => bounds.contains([c.lat, c.lng]))
@@ -125,10 +122,8 @@ onMounted(() => {
 
   map.value = m
 
-  // Initial render
   updateVisibleCities()
 
-  // Redraw on pan/zoom
   m.on('moveend', updateVisibleCities)
 })
 
