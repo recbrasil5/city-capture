@@ -3,11 +3,11 @@ import type { City, CompareResult } from "@/types";
 export function useGreatCircle() {
   const R_KM = 6371;
 
-  function toRad(deg: number) {
+  function toRad(deg: number): number {
     return (deg * Math.PI) / 180;
   }
 
-  function haversine(a: City, b: City) {
+  function haversine(a: City, b: City): number {
     const dLat = toRad(b.lat - a.lat);
     const dLng = toRad(b.lng - a.lng);
 
@@ -59,16 +59,27 @@ export function useGreatCircle() {
     return points;
   }
 
+  function computeFlightTime(miles: number): string {
+    const avgSpeed = 500; // mph
+    const hours = miles / avgSpeed;
+
+    const h = Math.floor(hours);
+    const m = Math.round((hours % 1) * 60);
+
+    return `${h}h ${m}m`;
+  }
+
   function computeCompareResult(a: City, b: City): CompareResult {
-    const greatCircleKm = haversine(a, b);
-    const greatCircleMiles = greatCircleKm * 0.621371;
+    const km = haversine(a, b);
+    const miles = km * 0.621371;
 
     return {
-      distanceKm: greatCircleKm,
-      distanceMiles: greatCircleMiles,
-      greatCircleKm,
-      greatCircleMiles,
+      distanceKm: km,
+      distanceMiles: miles,
+      greatCircleKm: km,
+      greatCircleMiles: miles,
       arcPoints: generateArcPoints(a, b),
+      flightTime: computeFlightTime(miles),
     };
   }
 

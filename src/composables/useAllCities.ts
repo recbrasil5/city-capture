@@ -1,7 +1,7 @@
 import type { City } from "@/types";
 
 export async function loadAllCities(): Promise<City[]> {
-  const modules = import.meta.glob("@/data/cities-by-country/*.json", {
+  const modules = import.meta.glob("@/data/*.json", {
     eager: true,
   });
 

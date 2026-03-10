@@ -1,6 +1,0 @@
-[
-  { "name": "Kampala", "lat": 0.3476, "lng": 32.5825, "country": "UG", "population": 1659600 },
-  { "name": "Gulu", "lat": 2.7724, "lng": 32.2881, "country": "UG", "population": 152276 },
-  { "name": "Lira", "lat": 2.2490, "lng": 32.8998, "country": "UG", "population": 119323 },
-  { "name": "Mbarara", "lat": -0.6072, "lng": 30.6545, "country": "UG", "population": 195013 }
-]

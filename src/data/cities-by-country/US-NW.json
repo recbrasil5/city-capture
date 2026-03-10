@@ -1,0 +1,15 @@
+[
+  { "name": "Anchorage", "lat": 61.2181, "lng": -149.9003, "country": "US", "population": 288121 },
+  { "name": "Bellevue", "lat": 47.6101, "lng": -122.2015, "country": "US", "population": 151854 },
+  { "name": "Billings", "lat": 45.7833, "lng": -108.5007, "country": "US", "population": 119706 },
+  { "name": "Boise", "lat": 43.6150, "lng": -116.2023, "country": "US", "population": 237446 },
+  { "name": "Eugene", "lat": 44.0521, "lng": -123.0868, "country": "US", "population": 176654 },
+  { "name": "Gresham", "lat": 45.5001, "lng": -122.4300, "country": "US", "population": 114247 },
+  { "name": "Kent", "lat": 47.3809, "lng": -122.2348, "country": "US", "population": 134835 },
+  { "name": "Portland", "lat": 45.5051, "lng": -122.6750, "country": "US", "population": 652503 },
+  { "name": "Salem", "lat": 44.9429, "lng": -123.0351, "country": "US", "population": 175535 },
+  { "name": "Seattle", "lat": 47.6062, "lng": -122.3321, "country": "US", "population": 733919 },
+  { "name": "Spokane", "lat": 47.6588, "lng": -117.4260, "country": "US", "population": 229071 },
+  { "name": "Tacoma", "lat": 47.2529, "lng": -122.4443, "country": "US", "population": 219205 },
+  { "name": "Vancouver", "lat": 45.6387, "lng": -122.6615, "country": "US", "population": 192169 }
+]

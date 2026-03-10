@@ -29,21 +29,28 @@ onMounted(async () => {
   }
 });
 
+function resetAll() {
+  selectedA.value = null;
+  selectedB.value = null;
+  compareResult.value = null;
+  mode.value = "map";
+}
+
 function handleCitySelected(city: City | null) {
+  // Clicking the map always exits panels
   if (!city) {
-    selectedA.value = null;
-    selectedB.value = null;
-    compareResult.value = null;
-    mode.value = "map";
+    resetAll();
     return;
   }
 
+  // First selection → City Mode
   if (!selectedA.value) {
     selectedA.value = city;
     mode.value = "city";
     return;
   }
 
+  // Second selection → Compare Mode
   if (!selectedB.value) {
     selectedB.value = city;
     compareResult.value = computeCompareResult(selectedA.value, selectedB.value);
@@ -53,17 +60,11 @@ function handleCitySelected(city: City | null) {
 }
 
 function closeCityPanel() {
-  selectedA.value = null;
-  selectedB.value = null;
-  compareResult.value = null;
-  mode.value = "map";
+  resetAll();
 }
 
 function closeCompare() {
-  selectedA.value = null;
-  selectedB.value = null;
-  compareResult.value = null;
-  mode.value = "map";
+  resetAll();
 }
 </script>
 

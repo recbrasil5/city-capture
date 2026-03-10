@@ -1,81 +1,144 @@
-<!-- src/components/Compare.vue -->
 <script setup lang="ts">
-import type { City, CompareResult } from "@/types";
+import { computed } from "vue";
+import type { City } from "@/types";
 
 const props = defineProps<{
-  cityA: City;
-  cityB: City;
-  result: CompareResult | null;
+  allCities: City[];
+  selectedA: City | null;
+  selectedB: City | null;
+  distanceKm: number | null;
+  distanceMiles: number | null;
+  flightTimeHours: number | null;
 }>();
 
-const emit = defineEmits<{
-  (e: "close"): void;
-}>();
+function haversine(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371;
+  const toRad = (v: number) => (v * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLon = toRad(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function estimateFlightTimeHours(distanceKm: number): number {
+  return distanceKm / 800 + 0.8;
+}
+
+function getPeerCities(city: City, all: City[]) {
+  const min = city.population * 0.8;
+  const max = city.population * 1.2;
+
+  return all
+    .filter(
+      (c) =>
+        c.country === city.country &&
+        c.name !== city.name &&
+        c.population >= min &&
+        c.population <= max
+    )
+    .sort(
+      (a, b) =>
+        Math.abs(a.population - city.population) -
+        Math.abs(b.population - city.population)
+    )
+    .slice(0, 3);
+}
+
+function getComparableTrips(origin: City, all: City[], target: number) {
+  return all
+    .filter((c) => c.name !== origin.name)
+    .map((c) => {
+      const d = haversine(origin.lat, origin.lng, c.lat, c.lng);
+      const t = estimateFlightTimeHours(d);
+      return { city: c, time: t };
+    })
+    .filter((x) => Math.abs(x.time - target) < 0.5)
+    .sort(
+      (a, b) =>
+        Math.abs(a.time - target) - Math.abs(b.time - target)
+    )
+    .slice(0, 3);
+}
+
+const peersA = computed(() =>
+  props.selectedA ? getPeerCities(props.selectedA, props.allCities) : []
+);
+
+const peersB = computed(() =>
+  props.selectedB ? getPeerCities(props.selectedB, props.allCities) : []
+);
+
+const comparableTripsFromA = computed(() => {
+  if (!props.selectedA || props.flightTimeHours == null) return [];
+  return getComparableTrips(props.selectedA, props.allCities, props.flightTimeHours);
+});
+
+const comparableTripsFromB = computed(() => {
+  if (!props.selectedB || props.flightTimeHours == null) return [];
+  return getComparableTrips(props.selectedB, props.allCities, props.flightTimeHours);
+});
 </script>
 
 <template>
-  <div class="compare-view">
-    <header class="header">
-      <h1>Compare Cities</h1>
-      <button class="close" @click="emit('close')">✕</button>
-    </header>
+  <div v-if="selectedA && selectedB" class="compare-panel">
+    <h2>Compare Cities</h2>
 
-    <section class="cities">
+    <section class="pair-summary">
       <div class="city-block">
-        <h2>{{ cityA.name }}</h2>
-        <p>{{ cityA.country }}</p>
-        <p>Pop: {{ cityA.population.toLocaleString() }}</p>
+        <h3>{{ selectedA.name }} ({{ selectedA.country }})</h3>
+        <p>Population: {{ selectedA.population.toLocaleString() }}</p>
+
+        <div v-if="peersA.length">
+          <h4>Similar-sized cities</h4>
+          <ul>
+            <li v-for="p in peersA" :key="p.name">
+              {{ p.name }} — {{ p.population.toLocaleString() }}
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="city-block">
-        <h2>{{ cityB.name }}</h2>
-        <p>{{ cityB.country }}</p>
-        <p>Pop: {{ cityB.population.toLocaleString() }}</p>
+        <h3>{{ selectedB.name }} ({{ selectedB.country }})</h3>
+        <p>Population: {{ selectedB.population.toLocaleString() }}</p>
+
+        <div v-if="peersB.length">
+          <h4>Similar-sized cities</h4>
+          <ul>
+            <li v-for="p in peersB" :key="p.name">
+              {{ p.name }} — {{ p.population.toLocaleString() }}
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="stats">
-      <div v-if="result">
-        <h3>Distance</h3>
-        <p>{{ result.distanceMiles.toFixed(0) }} miles</p>
-        <p>{{ result.distanceKm.toFixed(0) }} km</p>
+    <section v-if="distanceKm != null" class="distance-summary">
+      <h3>Trip Summary</h3>
+      <p>{{ Math.round(distanceMiles) }} miles / {{ Math.round(distanceKm) }} km</p>
+      <p>Flight time: {{ flightTimeHours.toFixed(1) }} hours</p>
+    </section>
+
+    <section class="comparable-trips">
+      <div v-if="comparableTripsFromA.length">
+        <h4>Trips similar to {{ selectedA.name }} → {{ selectedB.name }}</h4>
+        <ul>
+          <li v-for="t in comparableTripsFromA" :key="t.city.name">
+            {{ selectedA.name }} → {{ t.city.name }} ({{ t.time.toFixed(1) }}h)
+          </li>
+        </ul>
       </div>
 
-      <div v-else>
-        <p>Calculating…</p>
+      <div v-if="comparableTripsFromB.length">
+        <h4>Trips similar to {{ selectedA.name }} → {{ selectedB.name }} (from {{ selectedB.name }})</h4>
+        <ul>
+          <li v-for="t in comparableTripsFromB" :key="t.city.name">
+            {{ selectedB.name }} → {{ t.city.name }} ({{ t.time.toFixed(1) }}h)
+          </li>
+        </ul>
       </div>
     </section>
   </div>
 </template>
-
-<style scoped>
-.compare-view {
-  padding: 16px;
-  overflow-y: auto;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.close {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-.cities {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
-}
-.city-block {
-  width: 48%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-}
-.stats {
-  margin-top: 20px;
-}
-</style>
