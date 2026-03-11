@@ -19,6 +19,8 @@ const compareResult = ref<CompareResult | null>(null);
 const mode = ref<"map" | "city" | "compare">("map");
 const isLoading = ref(true);
 
+console.log("MAP KEY:", import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
+
 onMounted(async () => {
   isLoading.value = true;
   try {
