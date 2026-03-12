@@ -1,5 +1,5 @@
 export async function lookupCityByLatLng(lat: number, lng: number) {
-  const key = import.meta.env.VITE_GOOGLE_API_KEY
+  const key = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
 
   const url =
     `https://maps.googleapis.com/maps/api/place/nearbysearch/json` +

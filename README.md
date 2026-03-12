@@ -2,7 +2,6 @@
 
 City-Center is a prototype for a personal, map‑driven city exploration app.  
 It’s built in **Vue 3 + Vite** as a fast, expressive environment for discovering the product’s shape before we commit to a full mobile build in React Native.
-
 The goal is simple:  
 **help people understand cities the way they actually feel them — through movement, density, and lived experience — not through generic travel guides.**
 
@@ -26,6 +25,7 @@ This view is about *orientation* — understanding where cities sit in relation 
 
 ### 2. **City Detail View**
 When a user taps a city, they get a focused profile:
+```
 
 - population  
 - region  
