@@ -1,0 +1,9 @@
+[
+  { "name": "Allentown", "lat": 40.6023, "lng": -75.4714, "country": "US", "population": 125845 },
+  { "name": "Baltimore", "lat": 39.2904, "lng": -76.6122, "country": "US", "population": 585708 },
+  { "name": "Elizabeth", "lat": 40.6639, "lng": -74.2107, "country": "US", "population": 137298 },
+  { "name": "Jersey City", "lat": 40.7178, "lng": -74.0431, "country": "US", "population": 292449 },
+  { "name": "New York", "lat": 40.7128, "lng": -74.0060, "country": "US", "population": 8804190 },
+  { "name": "Newark", "lat": 40.7357, "lng": -74.1724, "country": "US", "population": 307220 },
+  { "name": "Philadelphia", "lat": 39.9526, "lng": -75.1652, "country": "US", "population": 1584064 }
+]

@@ -1,42 +1,102 @@
-# world-sim
+# City-Center
 
-This template should help get you started developing with Vue 3 in Vite.
+City-Center is a prototype for a personal, map‑driven city exploration app.  
+It’s built in **Vue 3 + Vite** as a fast, expressive environment for discovering the product’s shape before we commit to a full mobile build in React Native.
+The goal is simple:  
+**help people understand cities the way they actually feel them — through movement, density, and lived experience — not through generic travel guides.**
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🌆 Core Concept
 
-## Recommended Browser Setup
+City-Center revolves around three primary views:
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### 1. **Map View**
+The heart of the app.  
+A clean, minimal map that shows:
 
-## Type Support for `.vue` Imports in TS
+- major cities  
+- population‑based visibility thresholds  
+- airport overlays  
+- region groupings  
+- zoom‑based filtering  
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+This view is about *orientation* — understanding where cities sit in relation to each other and how they cluster.
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-yarn
+### 2. **City Detail View**
+When a user taps a city, they get a focused profile:
 ```
 
-### Compile and Hot-Reload for Development
+- population  
+- region  
+- airport presence  
+- quick facts  
+- emotional “vibe” notes (future feature)  
 
-```sh
-yarn dev
-```
+This view is about *identity* — what makes this city itself.
 
-### Type-Check, Compile and Minify for Production
+### 3. **Compare View**
+A lightweight comparison tool:
 
-```sh
-yarn build
-```
+- pick two cities  
+- see them side‑by‑side  
+- compare population, airports, density, region, and other attributes  
+
+This view is about *decision‑making* — helping users choose where to travel, move, or explore next.
+
+---
+
+## 🎯 Why Vue for the Prototype
+
+City-Center is being prototyped in Vue because:
+
+- Vue is fast to iterate in  
+- the template syntax makes UI exploration frictionless  
+- Pinia stores let us model the domain cleanly  
+- we can rapidly test ideas without wrestling with mobile constraints  
+
+The Vue prototype is **not** the final product — it’s the sketchbook where we discover:
+
+- the right data model  
+- the right interactions  
+- the right emotional tone  
+- the right map behavior  
+
+Once the prototype feels right, we’ll port the architecture to **React Native** for the real mobile experience.
+
+---
+
+## 📱 Long-Term Vision: React Native
+
+City-Center is ultimately a **mobile-first** product.
+
+After the Vue prototype stabilizes, we will:
+
+- migrate the domain layer (stores, utils, data models) directly  
+- rebuild the UI in React Native  
+- integrate native maps, gestures, and camera features  
+- support offline city packs  
+- add journaling, clippings, and personal notes  
+
+The Vue prototype ensures we don’t waste time doing massive refactors in React Native.  
+We figure out the soul of the product here — then bring it to life natively.
+
+---
+
+## 🧱 Tech Stack
+
+- Vue 3  
+- Vite  
+- TypeScript  
+- Pinia  
+- Google Maps (prototype)  
+- Future: React Native + Expo  
+
+---
+
+## 🚧 Status
+
+Active prototype.  
+Architecture is stabilizing.  
+Map engine is evolving.  
+React Native migration planned once the UX is locked in.

@@ -29,41 +29,44 @@ onMounted(async () => {
   }
 });
 
-function handleCitySelected(city: City | null) {
-  if (!city) {
-    selectedA.value = null;
-    selectedB.value = null;
-    compareResult.value = null;
-    mode.value = "map";
-    return;
-  }
+function resetAll() {
+  selectedA.value = null;
+  selectedB.value = null;
+  compareResult.value = null;
+  mode.value = "map";
+}
 
+function handleMarkerClick(city: City) {
+  // No city A yet → select A, show City panel
   if (!selectedA.value) {
     selectedA.value = city;
     mode.value = "city";
     return;
   }
 
-  if (!selectedB.value) {
-    selectedB.value = city;
-    compareResult.value = computeCompareResult(selectedA.value, selectedB.value);
-    mode.value = "compare";
+  // Already have A → set (or replace) B, show Compare panel
+  selectedB.value = city;
+  compareResult.value = computeCompareResult(selectedA.value, city);
+  mode.value = "compare";
+}
+
+function handleMapClick() {
+  // Undo last action: compare → city, city → map
+  if (selectedB.value) {
+    selectedB.value = null;
+    compareResult.value = null;
+    mode.value = "city";
     return;
   }
+  resetAll();
 }
 
 function closeCityPanel() {
-  selectedA.value = null;
-  selectedB.value = null;
-  compareResult.value = null;
-  mode.value = "map";
+  resetAll();
 }
 
 function closeCompare() {
-  selectedA.value = null;
-  selectedB.value = null;
-  compareResult.value = null;
-  mode.value = "map";
+  resetAll();
 }
 </script>
 
@@ -72,11 +75,11 @@ function closeCompare() {
     <Map
       class="map-pane"
       :cities="cities"
-      :loading="isLoading"
       :selectedA="selectedA"
       :selectedB="selectedB"
-      :arcPoints="compareResult?.arcPoints"
-      @city-selected="handleCitySelected"
+      :compareResult="compareResult"
+      @marker-click="handleMarkerClick"
+      @map-click="handleMapClick"
     />
 
     <div v-if="mode !== 'map'" class="panel-container">
@@ -91,6 +94,7 @@ function closeCompare() {
         :cityA="selectedA"
         :cityB="selectedB"
         :result="compareResult"
+        :allCities="cities"
         @close="closeCompare"
       />
     </div>
