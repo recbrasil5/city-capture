@@ -15,5 +15,6 @@ export interface CompareResult {
 
   arcPoints: [number, number][];
 
-  flightTime: string; // "2h 13m"
+  flightTime: string;      // "2h 13m"
+  flightTimeHours: number;  // numeric hours for calculations
 }

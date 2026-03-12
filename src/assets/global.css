@@ -5,10 +5,14 @@ html, body, #app {
   padding: 0;
 }
 
-/* Leaflet’s internal container must be styled globally */
-.leaflet-container {
-  height: 100vh;
-  width: 100vw;
+/* Hide close button on marker InfoWindow labels */
+.gm-style-iw button.gm-ui-hover-effect {
+  display: none !important;
+}
+
+/* Tighten InfoWindow padding so labels look like tooltips */
+.gm-style-iw-d {
+  overflow: hidden !important;
 }
 
 /* Optional: a neutral background so you can see layout before map loads */

@@ -72,6 +72,7 @@ export function useGreatCircle() {
   function computeCompareResult(a: City, b: City): CompareResult {
     const km = haversine(a, b);
     const miles = km * 0.621371;
+    const hours = miles / 500;
 
     return {
       distanceKm: km,
@@ -80,6 +81,7 @@ export function useGreatCircle() {
       greatCircleMiles: miles,
       arcPoints: generateArcPoints(a, b),
       flightTime: computeFlightTime(miles),
+      flightTimeHours: hours,
     };
   }
 

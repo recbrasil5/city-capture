@@ -7,16 +7,29 @@ export function useGoogleMap() {
   const map = ref<google.maps.Map | null>(null);
 
   async function initMap(options: google.maps.MapOptions) {
-    setOptions({
-      apiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
-      version: "weekly",
-    });
+    const key = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
-    const { Map } = await importLibrary("maps");
+    if (!key) {
+      console.error("[useGoogleMap] VITE_GOOGLE_MAPS_API_KEY is missing — check .env.local");
+      return;
+    }
 
-    if (!mapEl.value) return;
+    console.log(`[useGoogleMap] key loaded: ${key.slice(0, 8)}…${key.slice(-4)}`);
 
-    map.value = new Map(mapEl.value, options);
+    try {
+      setOptions({ key, v: "weekly" });
+      const { Map } = await importLibrary("maps");
+
+      if (!mapEl.value) {
+        console.warn("[useGoogleMap] mapEl ref is null — is the template mounted?");
+        return;
+      }
+
+      map.value = new Map(mapEl.value, options);
+      console.log("[useGoogleMap] map created ✓");
+    } catch (err) {
+      console.error("[useGoogleMap] initMap failed:", err);
+    }
   }
 
   return { mapEl, map, initMap };

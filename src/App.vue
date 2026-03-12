@@ -19,8 +19,6 @@ const compareResult = ref<CompareResult | null>(null);
 const mode = ref<"map" | "city" | "compare">("map");
 const isLoading = ref(true);
 
-console.log("MAP KEY:", import.meta.env.VITE_GOOGLE_MAPS_API_KEY);
-
 onMounted(async () => {
   isLoading.value = true;
   try {
@@ -38,27 +36,29 @@ function resetAll() {
   mode.value = "map";
 }
 
-function handleCitySelected(city: City | null) {
-  // Clicking the map always exits panels
-  if (!city) {
-    resetAll();
-    return;
-  }
-
-  // First selection → City Mode
+function handleMarkerClick(city: City) {
+  // No city A yet → select A, show City panel
   if (!selectedA.value) {
     selectedA.value = city;
     mode.value = "city";
     return;
   }
 
-  // Second selection → Compare Mode
-  if (!selectedB.value) {
-    selectedB.value = city;
-    compareResult.value = computeCompareResult(selectedA.value, selectedB.value);
-    mode.value = "compare";
+  // Already have A → set (or replace) B, show Compare panel
+  selectedB.value = city;
+  compareResult.value = computeCompareResult(selectedA.value, city);
+  mode.value = "compare";
+}
+
+function handleMapClick() {
+  // Undo last action: compare → city, city → map
+  if (selectedB.value) {
+    selectedB.value = null;
+    compareResult.value = null;
+    mode.value = "city";
     return;
   }
+  resetAll();
 }
 
 function closeCityPanel() {
@@ -75,11 +75,11 @@ function closeCompare() {
     <Map
       class="map-pane"
       :cities="cities"
-      :loading="isLoading"
       :selectedA="selectedA"
       :selectedB="selectedB"
-      :arcPoints="compareResult?.arcPoints"
-      @city-selected="handleCitySelected"
+      :compareResult="compareResult"
+      @marker-click="handleMarkerClick"
+      @map-click="handleMapClick"
     />
 
     <div v-if="mode !== 'map'" class="panel-container">
@@ -94,6 +94,7 @@ function closeCompare() {
         :cityA="selectedA"
         :cityB="selectedB"
         :result="compareResult"
+        :allCities="cities"
         @close="closeCompare"
       />
     </div>

@@ -14,6 +14,12 @@ const emit = defineEmits<{
 
 const { loading, error, details, load } = useCityDetails();
 
+function countryToFlag(code: string): string {
+  return String.fromCodePoint(
+    ...Array.from(code.toUpperCase()).map((c) => 0x1f1e6 + c.charCodeAt(0) - 65)
+  );
+}
+
 onMounted(() => {
   load(props.city);
 });
@@ -31,7 +37,7 @@ watch(
     <button class="close-btn" @click="emit('close')">×</button>
 
     <div class="content">
-      <h2>{{ props.city.name }}, {{ props.city.country }}</h2>
+      <h2>{{ props.city.name }} <span class="country-flag">{{ countryToFlag(props.city.country) }}</span></h2>
 
       <div v-if="loading" class="loading">Loading details…</div>
       <div v-if="error" class="error">{{ error }}</div>
@@ -43,6 +49,9 @@ watch(
           alt="City photo"
           class="hero"
         />
+        <div v-else class="flag-hero">
+          {{ countryToFlag(props.city.country) }}
+        </div>
 
         <p class="summary">{{ details.summary }}</p>
 
@@ -92,13 +101,19 @@ watch(
   position: absolute;
   top: 12px;
   right: 12px;
-  background: #eee;
-  border: none;
+  z-index: 5;
+  background: #ddd;
+  border: 1px solid #bbb;
   font-size: 22px;
   width: 32px;
   height: 32px;
   border-radius: 6px;
   cursor: pointer;
+  line-height: 30px;
+  text-align: center;
+}
+.close-btn:hover {
+  background: #ccc;
 }
 
 .content {
@@ -111,6 +126,18 @@ watch(
   margin-bottom: 16px;
 }
 
+.flag-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(135deg, #e8ecf1, #d4dbe5);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 64px;
+}
+
 .summary {
   font-size: 15px;
   line-height: 1.5;
@@ -119,6 +146,11 @@ watch(
 
 .meta p {
   margin: 6px 0;
+}
+
+.country-flag {
+  font-size: 0.75em;
+  vertical-align: middle;
 }
 
 .loading {
