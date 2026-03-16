@@ -28,14 +28,11 @@ onMounted(async () => {
     disableDefaultUI: true,
   });
 
-  // Initial marker build
   createMarkers(props.cities);
   highlightMarkers(props.cities, props.selectedA, props.selectedB);
 
-  // Clicking empty map → deselect
   map.value?.addListener("click", () => emit("map-click"));
 
-  // Rebuild markers on zoom change (population threshold changes)
   map.value?.addListener("zoom_changed", () => {
     createMarkers(props.cities);
     highlightMarkers(props.cities, props.selectedA, props.selectedB);
@@ -43,10 +40,8 @@ onMounted(async () => {
 });
 
 // ---------------------------------------------------------------------------
-// WATCHERS — stable, leak‑free, no duplicate redraws
+// WATCHERS — stable, no duplicate redraws
 // ---------------------------------------------------------------------------
-
-// 1. Rebuild markers ONLY when the actual city list changes
 watch(
   () => props.cities.map(c => c.name).join("|"),
   () => {
@@ -56,7 +51,6 @@ watch(
   }
 );
 
-// 2. Highlight markers ONLY when A or B identity changes
 watch(
   () => [props.selectedA?.name, props.selectedB?.name],
   () => {
@@ -65,7 +59,6 @@ watch(
   }
 );
 
-// 3. Draw arc ONLY when the actual route changes
 watch(
   () => props.compareResult?.distanceMiles,
   () => {
