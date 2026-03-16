@@ -11,6 +11,9 @@ import { useGreatCircle } from "@/composables/useGreatCircle";
 
 const { computeCompareResult } = useGreatCircle();
 
+// ---------------------------------------------------------------------------
+// STATE
+// ---------------------------------------------------------------------------
 const cities = ref<City[]>([]);
 const selectedA = ref<City | null>(null);
 const selectedB = ref<City | null>(null);
@@ -19,6 +22,9 @@ const compareResult = ref<CompareResult | null>(null);
 const mode = ref<"map" | "city" | "compare">("map");
 const isLoading = ref(true);
 
+// ---------------------------------------------------------------------------
+// LOAD CITIES
+// ---------------------------------------------------------------------------
 onMounted(async () => {
   isLoading.value = true;
   try {
@@ -29,6 +35,9 @@ onMounted(async () => {
   }
 });
 
+// ---------------------------------------------------------------------------
+// STATE TRANSITIONS
+// ---------------------------------------------------------------------------
 function resetAll() {
   selectedA.value = null;
   selectedB.value = null;
@@ -36,22 +45,31 @@ function resetAll() {
   mode.value = "map";
 }
 
-function handleMarkerClick(city: City) {
-  // No city A yet → select A, show City panel
-  if (!selectedA.value) {
-    selectedA.value = city;
-    mode.value = "city";
-    return;
-  }
+function goToCity(city: City) {
+  selectedA.value = city;
+  selectedB.value = null;
+  compareResult.value = null;
+  mode.value = "city";
+}
 
-  // Already have A → set (or replace) B, show Compare panel
-  selectedB.value = city;
-  compareResult.value = computeCompareResult(selectedA.value, city);
+function goToCompare(cityB: City) {
+  selectedB.value = cityB;
+  compareResult.value = computeCompareResult(selectedA.value!, cityB);
   mode.value = "compare";
 }
 
+// ---------------------------------------------------------------------------
+// EVENT HANDLERS
+// ---------------------------------------------------------------------------
+function handleMarkerClick(city: City) {
+  if (!selectedA.value) {
+    goToCity(city);
+    return;
+  }
+  goToCompare(city);
+}
+
 function handleMapClick() {
-  // Undo last action: compare → city, city → map
   if (selectedB.value) {
     selectedB.value = null;
     compareResult.value = null;

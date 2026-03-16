@@ -18,6 +18,9 @@ const { mapEl, map, initMap } = useGoogleMap();
 const { createMarkers, highlightMarkers } = useMarkers(map, emit);
 const { drawArc } = useArc(map);
 
+// ---------------------------------------------------------------------------
+// INIT
+// ---------------------------------------------------------------------------
 onMounted(async () => {
   await initMap({
     center: { lat: 39, lng: -98 },
@@ -25,24 +28,27 @@ onMounted(async () => {
     disableDefaultUI: true,
   });
 
+  // Initial marker build
   createMarkers(props.cities);
   highlightMarkers(props.cities, props.selectedA, props.selectedB);
 
-  // Click empty map → deselect
-  map.value?.addListener("click", () => {
-    emit("map-click");
-  });
+  // Clicking empty map → deselect
+  map.value?.addListener("click", () => emit("map-click"));
 
-  // Rebuild markers when zoom changes (population threshold varies by zoom)
+  // Rebuild markers on zoom change (population threshold changes)
   map.value?.addListener("zoom_changed", () => {
     createMarkers(props.cities);
     highlightMarkers(props.cities, props.selectedA, props.selectedB);
   });
 });
 
-// Rebuild only when city list actually changes (not on every parent re-render)
+// ---------------------------------------------------------------------------
+// WATCHERS — stable, leak‑free, no duplicate redraws
+// ---------------------------------------------------------------------------
+
+// 1. Rebuild markers ONLY when the actual city list changes
 watch(
-  () => props.cities.length,
+  () => props.cities.map(c => c.name).join("|"),
   () => {
     if (!map.value) return;
     createMarkers(props.cities);
@@ -50,20 +56,20 @@ watch(
   }
 );
 
-// Lightweight update when selection changes (icons + labels only)
+// 2. Highlight markers ONLY when A or B identity changes
 watch(
-  () => [props.selectedA, props.selectedB],
+  () => [props.selectedA?.name, props.selectedB?.name],
   () => {
     if (!map.value) return;
     highlightMarkers(props.cities, props.selectedA, props.selectedB);
   }
 );
 
-// Draw / clear arc when compare result changes
+// 3. Draw arc ONLY when the actual route changes
 watch(
-  () => props.compareResult,
-  (result) => {
-    drawArc(result ?? null);
+  () => props.compareResult?.distanceMiles,
+  () => {
+    drawArc(props.compareResult ?? null);
   }
 );
 </script>
