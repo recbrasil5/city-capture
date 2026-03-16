@@ -2,6 +2,14 @@
 import type { City, CompareResult } from "@/types";
 import { useCompareInsights } from "@/composables/useCompareInsights";
 
+// Flag helper
+function flagEmoji(code: string): string {
+  if (!code) return "";
+  return code
+    .toUpperCase()
+    .replace(/./g, c => String.fromCodePoint(127397 + c.charCodeAt(0)));
+}
+
 const props = defineProps<{
   cityA: City;
   cityB: City;
@@ -12,11 +20,9 @@ const props = defineProps<{
 const emit = defineEmits<{ (e: "close"): void }>();
 
 const {
-  peersA,
-  peersB,
-  comparableTripsFromA,
-  comparableTripsFromB,
-  flightTimeHours
+  comparableA,
+  comparableB,
+  interestingFacts
 } = useCompareInsights(props.cityA, props.cityB, props.allCities, props.result);
 </script>
 
@@ -27,60 +33,59 @@ const {
     <div class="content">
       <h2>Compare Cities</h2>
 
+      <!-- City A + B summary -->
       <section class="pair-summary">
         <div class="city-block">
-          <h3>{{ cityA.name }} ({{ cityA.country }})</h3>
+          <h3>
+            {{ flagEmoji(cityA.country) }} {{ cityA.name }}
+            <span class="country">({{ cityA.country }})</span>
+          </h3>
           <p>Population: {{ cityA.population.toLocaleString() }}</p>
 
-          <div v-if="peersA.length">
-            <h4>Similar-sized cities</h4>
-            <ul>
-              <li v-for="p in peersA" :key="p.name">
-                {{ p.name }} — {{ p.population.toLocaleString() }}
-              </li>
-            </ul>
+          <div v-if="comparableA">
+            <h4>Most comparable city</h4>
+            <p>
+              {{ flagEmoji(comparableA.country) }}
+              {{ comparableA.name }} —
+              {{ comparableA.population.toLocaleString() }}
+            </p>
           </div>
         </div>
 
         <div class="city-block">
-          <h3>{{ cityB.name }} ({{ cityB.country }})</h3>
+          <h3>
+            {{ flagEmoji(cityB.country) }} {{ cityB.name }}
+            <span class="country">({{ cityB.country }})</span>
+          </h3>
           <p>Population: {{ cityB.population.toLocaleString() }}</p>
 
-          <div v-if="peersB.length">
-            <h4>Similar-sized cities</h4>
-            <ul>
-              <li v-for="p in peersB" :key="p.name">
-                {{ p.name }} — {{ p.population.toLocaleString() }}
-              </li>
-            </ul>
+          <div v-if="comparableB">
+            <h4>Most comparable city</h4>
+            <p>
+              {{ flagEmoji(comparableB.country) }}
+              {{ comparableB.name }} —
+              {{ comparableB.population.toLocaleString() }}
+            </p>
           </div>
         </div>
       </section>
 
+      <!-- Trip summary -->
       <section class="distance-summary">
         <h3>Trip Summary</h3>
         <p>{{ Math.round(result.distanceMiles) }} miles / {{ Math.round(result.distanceKm) }} km</p>
         <p>Flight time: {{ result.flightTime }}</p>
       </section>
 
-      <section class="comparable-trips">
-        <div v-if="comparableTripsFromA.length">
-          <h4>Similar trips from {{ cityA.name }}</h4>
-          <ul>
-            <li v-for="t in comparableTripsFromA" :key="t.city.name">
-              {{ cityA.name }} → {{ t.city.name }} ({{ t.time.toFixed(1) }}h)
-            </li>
-          </ul>
-        </div>
-
-        <div v-if="comparableTripsFromB.length">
-          <h4>Similar trips from {{ cityB.name }}</h4>
-          <ul>
-            <li v-for="t in comparableTripsFromB" :key="t.city.name">
-              {{ cityB.name }} → {{ t.city.name }} ({{ t.time.toFixed(1) }}h)
-            </li>
-          </ul>
-        </div>
+      <!-- Interesting connections -->
+      <section
+        v-if="Array.isArray(interestingFacts) && interestingFacts.length"
+        class="connections"
+      >
+        <h3>Interesting Connections</h3>
+        <ul>
+          <li v-for="fact in interestingFacts" :key="fact">{{ fact }}</li>
+        </ul>
       </section>
     </div>
   </div>
@@ -138,6 +143,14 @@ h2 {
 
 h3 {
   margin: 16px 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.country {
+  color: #777;
+  font-weight: 400;
 }
 
 h4 {
@@ -159,11 +172,11 @@ h4 {
   border-radius: 8px;
 }
 
-.comparable-trips ul {
+.connections ul {
   padding-left: 18px;
 }
 
-.comparable-trips li {
+.connections li {
   margin: 4px 0;
   font-size: 14px;
 }

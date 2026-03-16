@@ -1,93 +1,92 @@
+// src/composables/useCompareInsights.ts
 import { computed } from "vue";
 import type { City, CompareResult } from "@/types";
 
-// ------------------------------------------------------------
-// Pure math helpers
-// ------------------------------------------------------------
-function haversine(lat1: number, lon1: number, lat2: number, lon2: number): number {
-  const R = 6371;
-  const toRad = (v: number) => (v * Math.PI) / 180;
-  const dLat = toRad(lat2 - lat1);
-  const dLon = toRad(lon2 - lon1);
-  const a =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-}
-
-function estimateFlightTimeHours(distanceKm: number): number {
-  return distanceKm / 800 + 0.8;
-}
-
-// ------------------------------------------------------------
-// Peer cities (similar population)
-// ------------------------------------------------------------
-function getPeerCities(city: City, all: City[]) {
-  const min = city.population * 0.8;
-  const max = city.population * 1.2;
-
-  return all
-    .filter(
-      (c) =>
-        c.country === city.country &&
-        c.name !== city.name &&
-        c.population >= min &&
-        c.population <= max
-    )
-    .sort(
-      (a, b) =>
-        Math.abs(a.population - city.population) -
-        Math.abs(b.population - city.population)
-    )
-    .slice(0, 3);
-}
-
-// ------------------------------------------------------------
-// Comparable trips (similar flight time)
-// ------------------------------------------------------------
-function getComparableTrips(origin: City, all: City[], target: number) {
-  return all
-    .filter((c) => c.name !== origin.name)
-    .map((c) => {
-      const d = haversine(origin.lat, origin.lng, c.lat, c.lng);
-      const t = estimateFlightTimeHours(d);
-      return { city: c, time: t };
-    })
-    .filter((x) => Math.abs(x.time - target) < 0.5)
-    .sort(
-      (a, b) =>
-        Math.abs(a.time - target) - Math.abs(b.time - target)
-    )
-    .slice(0, 3);
-}
-
-// ------------------------------------------------------------
-// Main composable
-// ------------------------------------------------------------
 export function useCompareInsights(
   cityA: City,
   cityB: City,
   allCities: City[],
   result: CompareResult
 ) {
-  const flightTimeHours = computed(() => result.flightTimeHours);
+  // ------------------------------------------------------------
+  // Helpers
+  // ------------------------------------------------------------
+  function closestByPopulation(target: City): City | null {
+    const others = allCities.filter(c => c.name !== target.name);
+    if (!others.length) return null;
 
-  const peersA = computed(() => getPeerCities(cityA, allCities));
-  const peersB = computed(() => getPeerCities(cityB, allCities));
+    return others.reduce((best, c) => {
+      const diff = Math.abs(c.population - target.population);
+      const bestDiff = Math.abs(best.population - target.population);
+      return diff < bestDiff ? c : best;
+    });
+  }
 
-  const comparableTripsFromA = computed(() =>
-    getComparableTrips(cityA, allCities, flightTimeHours.value)
-  );
+  function climateZone(lat: number): string {
+    const a = Math.abs(lat);
+    if (a < 23.5) return "tropical";
+    if (a < 35) return "subtropical";
+    if (a < 50) return "temperate";
+    return "cold";
+  }
 
-  const comparableTripsFromB = computed(() =>
-    getComparableTrips(cityB, allCities, flightTimeHours.value)
-  );
+  // ------------------------------------------------------------
+  // Most comparable cities
+  // ------------------------------------------------------------
+  const comparableA = computed(() => closestByPopulation(cityA));
+  const comparableB = computed(() => closestByPopulation(cityB));
+
+  // ------------------------------------------------------------
+  // Interesting connections
+  // ------------------------------------------------------------
+  const interestingFacts = computed(() => {
+    const facts: string[] = [];
+
+    if (!cityA || !cityB || !result) return facts;
+
+    // Latitude proximity
+    const latDiff = Math.abs(cityA.lat - cityB.lat);
+    if (latDiff < 1.5) {
+      facts.push(`Both cities sit within ${latDiff.toFixed(1)}° of latitude.`);
+    }
+
+    // Climate zone
+    const zoneA = climateZone(cityA.lat);
+    const zoneB = climateZone(cityB.lat);
+    if (zoneA === zoneB) {
+      facts.push(`Both cities are in the ${zoneA} climate zone.`);
+    }
+
+    // Density similarity (if area exists)
+    if (cityA.areaKm2 && cityB.areaKm2) {
+      const densityA = cityA.population / cityA.areaKm2;
+      const densityB = cityB.population / cityB.areaKm2;
+      const diff = Math.abs(densityA - densityB) / densityA;
+
+      if (diff < 0.15) {
+        facts.push(
+          `Their population densities differ by only ${(diff * 100).toFixed(0)}%.`
+        );
+      }
+    }
+
+    // Time zone (if provided)
+    if (cityA.tz && cityB.tz && cityA.tz === cityB.tz) {
+      facts.push(`Both cities share the same time zone (${cityA.tz}).`);
+    }
+
+    // Flight time symmetry
+    const hours = result.flightTimeHours;
+    if (hours < 5) {
+      facts.push(`The cities are only ${hours.toFixed(1)} hours apart by air.`);
+    }
+
+    return facts;
+  });
 
   return {
-    peersA,
-    peersB,
-    comparableTripsFromA,
-    comparableTripsFromB,
-    flightTimeHours
+    comparableA,
+    comparableB,
+    interestingFacts,
   };
 }
