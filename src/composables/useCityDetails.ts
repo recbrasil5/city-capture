@@ -1,3 +1,4 @@
+// src/composables/useCityDetails.ts
 import { ref } from "vue";
 import type { City } from "@/types";
 import { searchPlace, getPhotoUrl } from "@/api/places";
@@ -30,7 +31,6 @@ export function useCityDetails() {
       const place = await searchPlace(city.name);
       const anyPlace = place as any | undefined;
 
-      // Google summary
       let summary: string =
         anyPlace?.editorialSummary?.text ??
         anyPlace?.editorialSummary ??
@@ -43,14 +43,12 @@ export function useCityDetails() {
         summary.length < 20 ||
         summary.toLowerCase().startsWith(`${city.name.toLowerCase()} refers to:`);
 
-      // Wikipedia fallback
       const wiki = await fetchWikipediaSummary(city.name, city.country);
 
       if (isGarbage && wiki?.extract) {
         summary = wiki.extract;
       }
 
-      // Photo
       const photoRef = anyPlace?.photos?.[0]?.name;
       const googlePhoto = photoRef ? getPhotoUrl(photoRef) : null;
       const wikiPhoto = wiki?.thumbnail?.source;

@@ -1,3 +1,4 @@
+// src/api/places.ts
 const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 export async function searchPlace(query: string) {
@@ -12,11 +13,8 @@ export async function searchPlace(query: string) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "X-Goog-FieldMask": [
-        "places.displayName",
-        "places.editorialSummary.text",
-        "places.photos.name"
-      ].join(",")
+      "X-Goog-FieldMask":
+        "places.id,places.displayName,places.editorialSummary,places.photos,places.rating,places.userRatingCount"
     },
     body: JSON.stringify(body)
   });
