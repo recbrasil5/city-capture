@@ -1,11 +1,9 @@
 // src/composables/useCityCompareState.ts
 import { ref } from "vue";
 import type { City, CompareResult } from "@/types";
-import { useGreatCircle } from "@/composables/useGreatCircle";
+import { computeCompareResult } from "@/utils/greatCircle";
 
 export function useCityCompareState() {
-  const { computeCompareResult } = useGreatCircle();
-
   // ------------------------------------------------------------
   // State
   // ------------------------------------------------------------
@@ -33,7 +31,8 @@ export function useCityCompareState() {
   }
 
   function goToCompare(cityB: City) {
-    if (!selectedA.value) return; // safety guard
+    if (!selectedA.value) return;
+
     selectedB.value = cityB;
     compareResult.value = computeCompareResult(selectedA.value, cityB);
     mode.value = "compare";
@@ -51,12 +50,15 @@ export function useCityCompareState() {
   }
 
   function handleMapClick() {
+    // If comparing, go back to city view
     if (selectedB.value) {
       selectedB.value = null;
       compareResult.value = null;
       mode.value = "city";
       return;
     }
+
+    // Otherwise reset everything
     resetAll();
   }
 
