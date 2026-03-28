@@ -1,77 +1,65 @@
 // src/composables/useCityCompareState.ts
-import { ref } from "vue";
-import type { City, CompareResult } from "@/types";
-import { computeCompareResult } from "@/utils/greatCircle";
+import { ref, computed } from "vue";
+import type { City } from "@/types";
+import { createCityCompareBehavior } from "@/domain/CityCompareBehavior";
 
 export function useCityCompareState() {
-  // ------------------------------------------------------------
-  // State
-  // ------------------------------------------------------------
+  const behavior = createCityCompareBehavior();
   const cities = ref<City[]>([]);
-  const selectedA = ref<City | null>(null);
-  const selectedB = ref<City | null>(null);
-  const compareResult = ref<CompareResult | null>(null);
-  const mode = ref<"map" | "city" | "compare">("map");
 
-  // ------------------------------------------------------------
-  // Transitions
-  // ------------------------------------------------------------
-  function resetAll() {
-    selectedA.value = null;
-    selectedB.value = null;
-    compareResult.value = null;
-    mode.value = "map";
-  }
+  // Reactive wrapper around domain state
+  const fsm = ref(behavior.getState());
 
-  function goToCity(city: City) {
-    selectedA.value = city;
-    selectedB.value = null;
-    compareResult.value = null;
-    mode.value = "city";
-  }
-
-  function goToCompare(cityB: City) {
-    if (!selectedA.value) return;
-
-    selectedB.value = cityB;
-    compareResult.value = computeCompareResult(selectedA.value, cityB);
-    mode.value = "compare";
+  function sync() {
+    fsm.value = behavior.getState();
   }
 
   // ------------------------------------------------------------
-  // Event handlers
+  // Exposed reactive state
+  // ------------------------------------------------------------
+  const mode = computed(() => fsm.value.mode);
+
+  const selectedA = computed(() =>
+    fsm.value.mode === "city" || fsm.value.mode === "compare"
+      ? fsm.value.a
+      : null
+  );
+
+  const selectedB = computed(() =>
+    fsm.value.mode === "compare" ? fsm.value.b : null
+  );
+
+  const compareResult = computed(() =>
+    fsm.value.mode === "compare" ? fsm.value.result : null
+  );
+
+  // ------------------------------------------------------------
+  // Event handlers (sync after domain updates)
   // ------------------------------------------------------------
   function handleMarkerClick(city: City) {
-    if (!selectedA.value) {
-      goToCity(city);
-      return;
-    }
-    goToCompare(city);
+    behavior.onMarkerClick(city);
+    sync();
   }
 
   function handleMapClick() {
-    // If comparing, go back to city view
-    if (selectedB.value) {
-      selectedB.value = null;
-      compareResult.value = null;
-      mode.value = "city";
-      return;
-    }
+    behavior.onMapClick();
+    sync();
+  }
 
-    // Otherwise reset everything
-    resetAll();
+  function resetAll() {
+    behavior.resetAll();
+    sync();
   }
 
   return {
     cities,
+    mode,
     selectedA,
     selectedB,
     compareResult,
-    mode,
-    resetAll,
-    goToCity,
-    goToCompare,
+
     handleMarkerClick,
     handleMapClick,
+    resetAll,
   };
 }
