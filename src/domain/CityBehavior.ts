@@ -61,7 +61,7 @@ export function createCityBehavior() {
       shortDescription: wiki?.description,
       rating: anyPlace?.rating,
       ratingCount: anyPlace?.userRatingCount,
-      photoUrl: googlePhoto || wikiPhoto || null,
+      photoUrl: wikiPhoto || googlePhoto || null,
       wikiUrl: wiki?.content_urls?.desktop?.page ?? null,
       coordinates: { lat: city.lat, lng: city.lng }
     };

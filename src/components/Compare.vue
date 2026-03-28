@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import type { City, CompareResult } from "@/types";
 import { useCompareInsights } from "@/composables/useCompareInsights";
-
-// Flag helper
-function flagEmoji(code: string): string {
-  if (!code) return "";
-  return code
-    .toUpperCase()
-    .replace(/./g, c => String.fromCodePoint(127397 + c.charCodeAt(0)));
-}
+import { flagUrl } from "@/utils/flags";
 
 const props = defineProps<{
   cityA: City;
@@ -37,7 +30,8 @@ const {
       <section class="pair-summary">
         <div class="city-block">
           <h3>
-            {{ flagEmoji(cityA.country) }} {{ cityA.name }}
+            <img :src="flagUrl(cityA.country)" :alt="cityA.country" class="country-flag" />
+            {{ cityA.name }}
             <span class="country">({{ cityA.country }})</span>
           </h3>
           <p>Population: {{ cityA.population.toLocaleString() }}</p>
@@ -45,7 +39,7 @@ const {
           <div v-if="comparableA">
             <h4>Most comparable city</h4>
             <p>
-              {{ flagEmoji(comparableA.country) }}
+              <img :src="flagUrl(comparableA.country)" :alt="comparableA.country" class="country-flag" />
               {{ comparableA.name }} —
               {{ comparableA.population.toLocaleString() }}
             </p>
@@ -54,7 +48,8 @@ const {
 
         <div class="city-block">
           <h3>
-            {{ flagEmoji(cityB.country) }} {{ cityB.name }}
+            <img :src="flagUrl(cityB.country)" :alt="cityB.country" class="country-flag" />
+            {{ cityB.name }}
             <span class="country">({{ cityB.country }})</span>
           </h3>
           <p>Population: {{ cityB.population.toLocaleString() }}</p>
@@ -62,7 +57,7 @@ const {
           <div v-if="comparableB">
             <h4>Most comparable city</h4>
             <p>
-              {{ flagEmoji(comparableB.country) }}
+              <img :src="flagUrl(comparableB.country)" :alt="comparableB.country" class="country-flag" />
               {{ comparableB.name }} —
               {{ comparableB.population.toLocaleString() }}
             </p>
@@ -151,6 +146,12 @@ h3 {
 .country {
   color: #777;
   font-weight: 400;
+}
+
+.country-flag {
+  height: 1em;
+  vertical-align: middle;
+  border-radius: 2px;
 }
 
 h4 {

@@ -72,7 +72,11 @@ export function createCityCompareBehavior(initial?: CityCompareState) {
         break;
 
       case "compare":
-        replaceB(city);
+        if (city.name === state.a.name) {
+          backToCity();
+        } else {
+          replaceB(city);
+        }
         break;
     }
   }

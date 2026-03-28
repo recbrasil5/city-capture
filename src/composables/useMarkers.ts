@@ -1,19 +1,7 @@
 import { ref } from "vue";
 import type { City } from "@/types";
+import { flagImg } from "@/utils/flags";
 
-// ---------------------------------------------------------------------------
-// Flag emoji helper
-// ---------------------------------------------------------------------------
-function flagEmoji(countryCode: string): string {
-  if (!countryCode) return "";
-  return countryCode
-    .toUpperCase()
-    .replace(/./g, (c) => String.fromCodePoint(127397 + c.charCodeAt(0)));
-}
-
-// ---------------------------------------------------------------------------
-// SVG icon factory — Leaflet-style teardrop pin
-// ---------------------------------------------------------------------------
 function makePinSvg(fill: string, border: string): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="25" height="41" viewBox="0 0 25 41">
     <path d="M12.5 0C5.6 0 0 5.6 0 12.5C0 21.9 12.5 41 12.5 41S25 21.9 25 12.5C25 5.6 19.4 0 12.5 0Z"
@@ -32,15 +20,21 @@ function makeIcon(fill: string, border: string, size: number): google.maps.Icon 
   };
 }
 
-// ---------------------------------------------------------------------------
-// Composable
-// ---------------------------------------------------------------------------
 export function useMarkers(map: any, emit: any) {
-  const markers = ref<google.maps.Marker[]>([]);
-  const TOL = 0.001;
+  let ICON_DEFAULT: google.maps.Icon;
+  let ICON_A: google.maps.Icon;
+  let ICON_B: google.maps.Icon;
 
-  let labelA: google.maps.InfoWindow | null = null;
-  let labelB: google.maps.InfoWindow | null = null;
+  function ensureIcons() {
+    if (!ICON_DEFAULT) {
+      ICON_DEFAULT = makeIcon("#2A81CB", "#164A8B", 20);
+      ICON_A = makeIcon("#2A81CB", "#164A8B", 32);
+      ICON_B = makeIcon("#CB8E2A", "#8B6414", 32);
+    }
+  }
+  // Markers are created ONCE and reused. Only icons/labels change.
+  const markers = ref<{ marker: google.maps.Marker; city: City }[]>([]);
+  let labels: google.maps.InfoWindow[] = [];
 
   function isAirportLike(name: string): boolean {
     return (
@@ -49,101 +43,33 @@ export function useMarkers(map: any, emit: any) {
     );
   }
 
-  function getPopulationThresholdForZoom(zoom: number): number {
-    if (zoom <= 4) return 500_000;
-    if (zoom <= 6) return 200_000;
-    if (zoom <= 8) return 100_000;
-    if (zoom <= 10) return 75_000;
-    return 50_000;
+  function clearLabels() {
+    for (const iw of labels) iw.close();
+    labels = [];
   }
 
-  function matchCity(marker: google.maps.Marker, cities: City[]) {
-    const pos = marker.getPosition();
-    if (!pos) return;
-    return cities.find(
-      (c) =>
-        Math.abs(c.lat - pos.lat()) < TOL &&
-        Math.abs(c.lng - pos.lng()) < TOL
-    );
-  }
-
-  function closeLabels() {
-    labelA?.close();
-    labelB?.close();
-    labelA = null;
-    labelB = null;
-  }
-
-  function clearMarkers() {
-    closeLabels();
-    markers.value.forEach((m) => m.setMap(null));
-    markers.value = [];
-  }
-
-  function highlightMarkers(
-    cities: City[],
-    selectedA: City | null,
-    selectedB: City | null
-  ) {
-    closeLabels();
-
-    markers.value.forEach((marker) => {
-      const city = matchCity(marker, cities);
-      if (!city) return;
-
-      const isA =
-        selectedA &&
-        city.name === selectedA.name &&
-        city.country === selectedA.country;
-      const isB =
-        selectedB &&
-        city.name === selectedB.name &&
-        city.country === selectedB.country;
-
-      const flag = flagEmoji(city.country);
-
-      if (isA) {
-        marker.setIcon(makeIcon("#2A81CB", "#164A8B", 32));
-        labelA = new google.maps.InfoWindow({
-          content: `<div style="font:600 13px/1.2 system-ui;white-space:nowrap;padding:2px 6px">
-            ${flag} ${city.name}
-            <span style="font-weight:400;color:#888">– ${city.country}</span>
-          </div>`,
-          disableAutoPan: true,
-        });
-        labelA.open(map.value, marker);
-      } else if (isB) {
-        marker.setIcon(makeIcon("#CB8E2A", "#8B6414", 32));
-        labelB = new google.maps.InfoWindow({
-          content: `<div style="font:600 13px/1.2 system-ui;white-space:nowrap;padding:2px 6px">
-            ${flag} ${city.name}
-            <span style="font-weight:400;color:#888">– ${city.country}</span>
-          </div>`,
-          disableAutoPan: true,
-        });
-        labelB.open(map.value, marker);
-      } else {
-        marker.setIcon(makeIcon("#2A81CB", "#164A8B", 20));
-      }
+  function addLabel(city: City, marker: google.maps.Marker) {
+    const iw = new google.maps.InfoWindow({
+      content: `<div style="font:500 11px/1 system-ui;white-space:nowrap;padding:2px 6px">${city.name}, ${city.country} ${flagImg(city.country, 9)}</div>`,
+      disableAutoPan: true,
     });
+    iw.open(map.value, marker);
+    labels.push(iw);
   }
 
-  function createMarkers(cities: City[]) {
+  /** Call once to populate the map with all city markers. */
+  function initMarkers(cities: City[]) {
     if (!map.value) return;
-
-    clearMarkers();
-
-    const zoom = map.value.getZoom() ?? 3;
-    const threshold = getPopulationThresholdForZoom(zoom);
+    ensureIcons();
 
     markers.value = cities
-      .filter((c) => c.population >= threshold && !isAirportLike(c.name))
+      .filter((c) => !isAirportLike(c.name))
       .map((city) => {
         const marker = new google.maps.Marker({
           position: { lat: city.lat, lng: city.lng },
           map: map.value,
           title: city.name,
-          icon: makeIcon("#2A81CB", "#164A8B", 20),
+          icon: ICON_DEFAULT,
         });
 
         marker.addListener("click", (e: any) => {
@@ -151,14 +77,30 @@ export function useMarkers(map: any, emit: any) {
           emit("marker-click", city);
         });
 
-        return marker;
+        return { marker, city };
       });
   }
 
-  return {
-    markers,
-    createMarkers,
-    clearMarkers,
-    highlightMarkers,
-  };
+  /** Update icons and labels to reflect current selection. Cheap — no marker creation/destruction. */
+  function updateSelection(selectedA: City | null, selectedB: City | null) {
+    ensureIcons();
+    clearLabels();
+
+    for (const { marker, city } of markers.value) {
+      const isA = selectedA && city.name === selectedA.name && city.country === selectedA.country;
+      const isB = selectedB && city.name === selectedB.name && city.country === selectedB.country;
+
+      if (isA) {
+        marker.setIcon(ICON_A);
+        addLabel(city, marker);
+      } else if (isB) {
+        marker.setIcon(ICON_B);
+        addLabel(city, marker);
+      } else {
+        marker.setIcon(ICON_DEFAULT);
+      }
+    }
+  }
+
+  return { initMarkers, updateSelection };
 }
