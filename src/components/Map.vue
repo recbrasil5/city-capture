@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { onMounted, watch } from "vue";
+import { onMounted } from "vue";
 import { useGoogleMap } from "@/composables/useGoogleMap";
 import { useMarkers } from "@/composables/useMarkers";
 import { useArc } from "@/composables/useArc";
+import { useMapInteractions } from "@/composables/useMapInteractions";
 import type { City, CompareResult } from "@/types";
 
 const props = defineProps<{
@@ -10,7 +11,6 @@ const props = defineProps<{
   selectedA: City | null;
   selectedB: City | null;
   compareResult: CompareResult | null;
-  targetZoom: number | null;
   compareBounds: { lat: number; lng: number }[] | null;
   shortRouteLabel: { distance: string; time: string } | null;
 }>();
@@ -30,34 +30,11 @@ onMounted(async () => {
 
   initMarkers(props.cities);
   updateSelection(props.selectedA, props.selectedB);
+
   map.value?.addListener("click", () => emit("map-click"));
 });
 
-watch(() => props.selectedA, () => {
-  updateSelection(props.selectedA, props.selectedB);
-});
-
-watch(() => props.selectedB, () => {
-  updateSelection(props.selectedA, props.selectedB);
-});
-
-watch(() => props.compareResult, () => {
-  drawArc(props.compareResult ?? null);
-});
-
-watch(() => props.targetZoom, (zoom, oldZoom) => {
-  if (!map.value || zoom === null || !props.selectedA) return;
-  if (oldZoom !== null) return;
-  map.value.setZoom(zoom);
-  map.value.panTo({ lat: props.selectedA.lat, lng: props.selectedA.lng });
-});
-
-watch(() => props.compareBounds, (bounds) => {
-  if (!map.value || !bounds) return;
-  const gBounds = new google.maps.LatLngBounds();
-  bounds.forEach(p => gBounds.extend(p));
-  map.value.fitBounds(gBounds, 60);
-});
+useMapInteractions(map, props, updateSelection, drawArc);
 </script>
 
 <template>

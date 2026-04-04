@@ -1,14 +1,16 @@
 // src/composables/useArc.ts
+import { type Ref } from "vue";
 import type { CompareResult } from "@/types";
 
-export function useArc(map: any) {
+export function useArc(map: Ref<google.maps.Map | null>) {
   const activePolylines: google.maps.Polyline[] = [];
   const activeOverlays: google.maps.OverlayView[] = [];
 
   function clearArc() {
-    activePolylines.forEach(p => p.setMap(null));
+    activePolylines.forEach((p) => p.setMap(null));
     activePolylines.length = 0;
-    activeOverlays.forEach(o => o.setMap(null));
+
+    activeOverlays.forEach((o) => o.setMap(null));
     activeOverlays.length = 0;
   }
 
@@ -31,18 +33,20 @@ export function useArc(map: any) {
     });
     activePolylines.push(polyline);
 
-    // Show pill label on arc midpoint for long routes (>= 2500 mi)
     if (result.distanceMiles >= 2500) {
       const midIdx = Math.floor(result.arcPoints.length / 2);
       const mid = result.arcPoints[midIdx];
       if (!mid) return;
 
-      const dist = `${Math.round(result.distanceMiles).toLocaleString()} mi / ${Math.round(result.distanceKm).toLocaleString()} km`;
+      const dist = `${Math.round(result.distanceMiles).toLocaleString()} mi / ${Math.round(
+        result.distanceKm
+      ).toLocaleString()} km`;
       const time = result.flightTime;
       const midLatLng = new google.maps.LatLng(mid[0], mid[1]);
 
       const overlay = new google.maps.OverlayView();
       const el = document.createElement("div");
+
       el.innerHTML = `${dist} <span style="color:#aaa;margin-left:4px">${time}</span>`;
       Object.assign(el.style, {
         position: "absolute",
@@ -61,6 +65,7 @@ export function useArc(map: any) {
       overlay.onAdd = function () {
         this.getPanes()!.floatPane.appendChild(el);
       };
+
       overlay.draw = function () {
         const proj = this.getProjection();
         const px = proj.fromLatLngToDivPixel(midLatLng);
@@ -69,9 +74,11 @@ export function useArc(map: any) {
           el.style.top = px.y + "px";
         }
       };
+
       overlay.onRemove = function () {
         el.remove();
       };
+
       overlay.setMap(map.value);
       activeOverlays.push(overlay);
     }

@@ -1,15 +1,26 @@
 [
   { "name": "Anchorage", "lat": 61.2181, "lng": -149.9003, "country": "US", "population": 288121 },
   { "name": "Bellevue", "lat": 47.6101, "lng": -122.2015, "country": "US", "population": 151854 },
+  { "name": "Bellingham", "lat": 48.7519, "lng": -122.4787, "country": "US", "population": 92300 },
+  { "name": "Bend", "lat": 44.0582, "lng": -121.3153, "country": "US", "population": 103254 },
   { "name": "Billings", "lat": 45.7833, "lng": -108.5007, "country": "US", "population": 119706 },
   { "name": "Boise", "lat": 43.6150, "lng": -116.2023, "country": "US", "population": 237446 },
   { "name": "Eugene", "lat": 44.0521, "lng": -123.0868, "country": "US", "population": 176654 },
+  { "name": "Everett", "lat": 47.9780, "lng": -122.2021, "country": "US", "population": 110629 },
+  { "name": "Fairbanks", "lat": 64.8378, "lng": -147.7164, "country": "US", "population": 32000 },
   { "name": "Gresham", "lat": 45.5001, "lng": -122.4300, "country": "US", "population": 114247 },
+  { "name": "Idaho Falls", "lat": 43.4917, "lng": -112.0333, "country": "US", "population": 67900 },
+  { "name": "Juneau", "lat": 58.3019, "lng": -134.4197, "country": "US", "population": 32000 },
   { "name": "Kent", "lat": 47.3809, "lng": -122.2348, "country": "US", "population": 134835 },
+  { "name": "Meridian", "lat": 43.6121, "lng": -116.3915, "country": "US", "population": 129736 },
+  { "name": "Missoula", "lat": 46.8721, "lng": -113.9940, "country": "US", "population": 75500 },
+  { "name": "Nampa", "lat": 43.5407, "lng": -116.5635, "country": "US", "population": 106186 },
   { "name": "Portland", "lat": 45.5051, "lng": -122.6750, "country": "US", "population": 652503 },
+  { "name": "Redmond", "lat": 47.6730, "lng": -122.1215, "country": "US", "population": 76000 },
   { "name": "Salem", "lat": 44.9429, "lng": -123.0351, "country": "US", "population": 175535 },
   { "name": "Seattle", "lat": 47.6062, "lng": -122.3321, "country": "US", "population": 733919 },
   { "name": "Spokane", "lat": 47.6588, "lng": -117.4260, "country": "US", "population": 229071 },
   { "name": "Tacoma", "lat": 47.2529, "lng": -122.4443, "country": "US", "population": 219205 },
-  { "name": "Vancouver", "lat": 45.6387, "lng": -122.6615, "country": "US", "population": 192169 }
+  { "name": "Vancouver", "lat": 45.6387, "lng": -122.6615, "country": "US", "population": 192169 },
+  { "name": "Yakima", "lat": 46.6021, "lng": -120.5059, "country": "US", "population": 96900 }
 ]

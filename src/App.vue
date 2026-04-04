@@ -12,7 +12,6 @@ const {
   selectedA,
   selectedB,
   compareResult,
-  targetZoom,
   compareBounds,
   shortRouteLabel,
   mode,
@@ -35,7 +34,6 @@ onMounted(async () => {
       :selectedA="selectedA"
       :selectedB="selectedB"
       :compareResult="compareResult"
-      :targetZoom="targetZoom"
       :compareBounds="compareBounds"
       :shortRouteLabel="shortRouteLabel"
       @marker-click="handleMarkerClick"
