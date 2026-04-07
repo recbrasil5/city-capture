@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Dublin",
+    "lat": 53.3498,
+    "lng": -6.2603,
+    "population": 1173179,
+    "country": "IE"
+  },
+  {
+    "name": "Cork",
+    "lat": 51.8985,
+    "lng": -8.4756,
+    "population": 222333,
+    "country": "IE"
+  },
+  {
+    "name": "Limerick",
+    "lat": 52.6638,
+    "lng": -8.6267,
+    "population": 102287,
+    "country": "IE"
+  },
+  {
+    "name": "Galway",
+    "lat": 53.2707,
+    "lng": -9.0568,
+    "population": 83456,
+    "country": "IE"
+  },
+  {
+    "name": "Waterford",
+    "lat": 52.2593,
+    "lng": -7.1101,
+    "population": 53504,
+    "country": "IE"
+  }
+]
