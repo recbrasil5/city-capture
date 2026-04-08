@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Belfast",
+    "lat": 54.5973,
+    "lng": -5.9301,
+    "population": 343542,
+    "country": "UK"
+  },
+  {
+    "name": "Derry",
+    "lat": 54.9970,
+    "lng": -7.3090,
+    "population": 85016,
+    "country": "UK"
+  }
+]
