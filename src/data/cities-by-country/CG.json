@@ -1,4 +1,8 @@
 [
-  { "name": "Brazzaville", "lat": -4.2634, "lng": 15.2429, "country": "CG", "population": 1827000 },
-  { "name": "Pointe-Noire", "lat": -4.7889, "lng": 11.8650, "country": "CG", "population": 715334 }
+  { "name": "Brazzaville", "lat": -4.2634, "lng": 15.2429, "population": 1827000 },
+  { "name": "Pointe-Noire", "lat": -4.7761, "lng": 11.8636, "population": 829000 },
+  { "name": "Dolisie", "lat": -4.1983, "lng": 12.6666, "population": 103894 },
+  { "name": "Nkayi", "lat": -4.1833, "lng": 13.2833, "population": 100783 },
+  { "name": "Impfondo", "lat": 1.6400, "lng": 18.0667, "population": 73000 },
+  { "name": "Ouesso", "lat": 1.6136, "lng": 16.0517, "population": 71000 }
 ]

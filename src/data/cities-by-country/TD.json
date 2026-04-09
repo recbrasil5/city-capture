@@ -1,0 +1,26 @@
+[
+  {
+    "city": "N'Djamena",
+    "lat": 12.1131,
+    "lng": 15.0492,
+    "population": 1092066
+  },
+  {
+    "city": "Moundou",
+    "lat": 8.5667,
+    "lng": 16.0833,
+    "population": 137251
+  },
+  {
+    "city": "Sarh",
+    "lat": 9.1500,
+    "lng": 18.3833,
+    "population": 120096
+  },
+  {
+    "city": "Abéché",
+    "lat": 13.8292,
+    "lng": 20.8324,
+    "population": 109000
+  }
+]
