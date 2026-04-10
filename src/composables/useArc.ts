@@ -15,10 +15,9 @@ export function useArc(map: Ref<google.maps.Map | null>) {
   }
 
   function drawArc(result: CompareResult | null) {
-    if (!map.value) return;
-
     clearArc();
 
+    if (!map.value) return;
     if (!result || !result.arcPoints || result.arcPoints.length === 0) return;
 
     const path = result.arcPoints.map(([lat, lng]) => ({ lat, lng }));
