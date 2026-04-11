@@ -28,11 +28,12 @@ export function useArc(map: Ref<google.maps.Map | null>) {
       strokeColor: "#007bff",
       strokeOpacity: 0.9,
       strokeWeight: 2,
+      clickable: false,
       map: map.value,
     });
     activePolylines.push(polyline);
 
-    if (result.distanceMiles >= 2500) {
+    {
       const midIdx = Math.floor(result.arcPoints.length / 2);
       const mid = result.arcPoints[midIdx];
       if (!mid) return;
