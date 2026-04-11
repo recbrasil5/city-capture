@@ -54,6 +54,7 @@ export function useMarkers(map: any, emit: any) {
       disableAutoPan: true,
     });
     iw.open(map.value, marker);
+    iw.addListener("closeclick", () => emit("map-click"));
     labels.push(iw);
   }
 

@@ -15,25 +15,34 @@ export function useMapInteractions(
   updateSelection: (a: City | null, b: City | null) => void,
   drawArc: (result: CompareResult | null) => void
 ) {
-  // City A → zoom to regional view
+  // City A → zoom to regional view; clear arc when deselected
   watch(() => props.selectedA, (city) => {
     updateSelection(props.selectedA, props.selectedB);
 
-    if (!map.value || !city) return;
+    if (!city) {
+      drawArc(null);
+      return;
+    }
+
+    if (!map.value) return;
 
     const CITY_CLICK_ZOOM = 5;
     map.value.setZoom(CITY_CLICK_ZOOM);
     map.value.panTo({ lat: city.lat, lng: city.lng });
   });
 
-  // City B → update selection only
-  watch(() => props.selectedB, () => {
+  // City B → update selection; clear arc when leaving compare
+  watch(() => props.selectedB, (city) => {
     updateSelection(props.selectedA, props.selectedB);
+
+    if (!city) {
+      drawArc(null);
+    }
   });
 
   // Arc drawing
-  watch(() => props.compareResult, () => {
-    drawArc(props.compareResult ?? null);
+  watch(() => props.compareResult, (result) => {
+    drawArc(result ?? null);
   });
 
   // Fit bounds only when both cities exist

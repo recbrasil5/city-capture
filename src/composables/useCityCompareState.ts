@@ -48,14 +48,8 @@ export function useCityCompareState() {
     ];
   });
 
-  // Short-route label for bottom overlay (null = long route, shown on arc instead)
-  const shortRouteLabel = computed(() => {
-    const r = compareResult.value;
-    if (!r || r.distanceMiles >= 2500) return null;
-    const mi = Math.round(r.distanceMiles).toLocaleString();
-    const km = Math.round(r.distanceKm).toLocaleString();
-    return { distance: `${mi} mi / ${km} km`, time: r.flightTime };
-  });
+  // Label is now always shown on the arc overlay — bottom overlay disabled
+  const shortRouteLabel = computed(() => null);
 
   // ------------------------------------------------------------
   // Event handlers (sync after domain updates)

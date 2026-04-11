@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(git checkout:*)",
-      "Bash(xargs grep:*)"
+      "Bash(xargs grep:*)",
+      "Bash(find /c/dev* -maxdepth 2 -type d -name \"*loan*\")",
+      "Read(//c/Users/NTurner/**)",
+      "Read(//c//**)"
     ]
   }
 }
